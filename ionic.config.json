@@ -1,0 +1,8 @@
+{
+  "name": "TourismApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "43bc1608"
+}
