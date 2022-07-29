@@ -2,6 +2,7 @@ import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, Io
 import { useParams } from 'react-router';
 import ExploreContainer from '../components/ExploreContainer';
 import './Page.css';
+import TouristNumberAndNationalitiesGraph from '../components/TouristNumberAndNationalitiesGraph';
 
 const Page: React.FC = () => {
 
@@ -25,6 +26,7 @@ const Page: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <ExploreContainer name={name} />
+        <TouristNumberAndNationalitiesGraph />
       </IonContent>
     </IonPage>
   );
