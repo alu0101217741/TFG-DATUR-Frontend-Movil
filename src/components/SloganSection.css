@@ -1,0 +1,25 @@
+.slogan-container {
+  background: url("../../public/assets/images/istockphoto-1264675861-170667a.jpg")
+    center center/cover no-repeat;
+  height: 18vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
+  box-shadow: 0px 0px 7px black;
+  color: #fff;
+  margin-bottom: 2em;
+  font-weight: 600;
+  text-shadow: 0.06em 0 black;
+}
+
+.slogan-container h2 {
+  font-weight: 600;
+  text-shadow: 0.06em 0 black;
+}
