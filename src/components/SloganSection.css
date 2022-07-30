@@ -1,6 +1,6 @@
 .slogan-container {
-  background: url("../../public/assets/images/istockphoto-1264675861-170667a.jpg")
-    center center/cover no-repeat;
+  background: url("../../public/assets/images/homeImage.jpg") center
+    center/cover no-repeat;
   height: 18vh;
   width: 100%;
   display: flex;
