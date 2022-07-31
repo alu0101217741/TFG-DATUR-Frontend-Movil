@@ -1,4 +1,4 @@
-import { IonItem, IonItemGroup, IonList } from "@ionic/react";
+import { IonItem, IonItemGroup, IonList, IonListHeader } from "@ionic/react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import highcharts3d from "highcharts/highcharts-3d";
@@ -102,6 +102,9 @@ const BasicColumnTotalSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
   return (
     <div>
       <IonList>
+        <IonListHeader>
+          <h2>Gasto turístico por trimestre</h2>
+        </IonListHeader>
         <IonItemGroup>
           <IonItem lines="none">
             <p>

@@ -13,17 +13,18 @@
   border-bottom-left-radius: 30%;
   border-bottom-right-radius: 30%;
   box-shadow: 0px 0px 7px black;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.342);
   color: #fff;
   margin-bottom: 2em;
   font-weight: 700;
   text-shadow: 0.06em 0 black;
   font-family: Oswald !important;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .slogan-container h1 {
   font-family: Oswald !important;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 27px;
   text-shadow: 0.06em 0 black;
 }

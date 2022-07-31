@@ -17,12 +17,11 @@ const TouristSpendingChart: React.FC = () => {
     <div>
       <IonList>
         <IonListHeader>
-          <h2>Visualización de los datos</h2>
+          <h1>Visualización de los datos</h1>
         </IonListHeader>
         <IonItemGroup>
           <LineChart data={[...data]} />
           <IonItemGroup>
-            <h3>Gasto turístico por trimestre</h3>
             <BasicColumnTotalSpendChart data={[...data]} />
             <BasicColumnAverageSpendChart data={[...data]} />
             <BasicColumnSpendChart data={[...data]} />

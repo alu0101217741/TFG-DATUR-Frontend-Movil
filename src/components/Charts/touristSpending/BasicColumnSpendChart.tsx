@@ -139,7 +139,7 @@ const BasicColumnSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
     <div>
       <IonList>
         <IonListHeader>
-          <h3>Desglose de gasto</h3>
+          <h2>Desglose de gasto</h2>
         </IonListHeader>
         <IonItemGroup>
           <IonItem lines="none">
@@ -150,7 +150,7 @@ const BasicColumnSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
               type and scrambled it to make a type specimen book.
             </p>
           </IonItem>
-          <IonItem>
+          <div className="select-container">
             <IonSelect
               placeholder={activeYear}
               onIonChange={(e) => handleSelect(e.detail.value)}
@@ -159,7 +159,7 @@ const BasicColumnSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
                 <IonSelectOption value={year}>{year}</IonSelectOption>
               ))}
             </IonSelect>
-          </IonItem>
+          </div>
           <HighchartsReact
             highcharts={Highcharts}
             options={chartOptions}
