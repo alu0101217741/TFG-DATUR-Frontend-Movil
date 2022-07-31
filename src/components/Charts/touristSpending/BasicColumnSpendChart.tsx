@@ -112,6 +112,7 @@ const BasicColumnSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
         },
       ],
     });
+    chartComponentRef.current?.chart.reflow();
   }, [data]);
 
   const handleSelect = (year: any) => {
