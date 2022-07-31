@@ -1,5 +1,6 @@
 import {
   IonItem,
+  IonItemGroup,
   IonList,
   IonListHeader,
   IonSelect,
@@ -139,29 +140,31 @@ const BasicColumnSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
         <IonListHeader>
           <h3>Desglose de gasto</h3>
         </IonListHeader>
-        <IonItem lines="none">
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </p>
-        </IonItem>
-        <IonItem>
-          <IonSelect
-            placeholder={activeYear}
-            onIonChange={(e) => handleSelect(e.detail.value)}
-          >
-            {years.map((year) => (
-              <IonSelectOption value={year}>{year}</IonSelectOption>
-            ))}
-          </IonSelect>
-        </IonItem>
-        <HighchartsReact
-          highcharts={Highcharts}
-          options={chartOptions}
-          ref={chartComponentRef}
-        />
+        <IonItemGroup>
+          <IonItem lines="none">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+          </IonItem>
+          <IonItem>
+            <IonSelect
+              placeholder={activeYear}
+              onIonChange={(e) => handleSelect(e.detail.value)}
+            >
+              {years.map((year) => (
+                <IonSelectOption value={year}>{year}</IonSelectOption>
+              ))}
+            </IonSelect>
+          </IonItem>
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={chartOptions}
+            ref={chartComponentRef}
+          />
+        </IonItemGroup>
       </IonList>
     </div>
   );

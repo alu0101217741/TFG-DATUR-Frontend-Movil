@@ -2,6 +2,7 @@ import { IonItemGroup, IonList, IonListHeader } from "@ionic/react";
 import { useEffect, useState } from "react";
 import { getDataFromApi } from "../../services/getDataFromApi";
 import LineChart from "../Charts/touristStay/LineChart";
+import ColumnComparisonChart from "./ColumnComparisonChart";
 
 const TouristStayChart: React.FC = () => {
   const [data, setData] = useState<any[]>([]);
@@ -18,6 +19,7 @@ const TouristStayChart: React.FC = () => {
         </IonListHeader>
         <IonItemGroup>
           <LineChart data={[...data]} />
+          <ColumnComparisonChart data={[...data]} />
         </IonItemGroup>
       </IonList>
     </div>
