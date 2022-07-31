@@ -1,7 +1,7 @@
 import { IonContent } from "@ionic/react";
 import React, { useEffect, useState } from "react";
 import { getDataFromApi } from "../services/getDataFromApi";
-import LineChart from "./Charts/LineChart";
+import LineChart from "./Charts/touristNumber/LineChart";
 
 const TouristNumberAndNationalitiesGraph: React.FC = () => {
   const [data, setData] = useState<any[]>([]);
