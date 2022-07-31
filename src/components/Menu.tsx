@@ -50,6 +50,12 @@ const appPages: AppPage[] = [
     mdIcon: heartSharp,
   },
   {
+    title: "Estancia turística",
+    url: "/tourist-stay",
+    iosIcon: heartOutline,
+    mdIcon: heartSharp,
+  },
+  {
     title: "Expectativas turísticas",
     url: "/tourist-expectations",
     iosIcon: archiveOutline,
