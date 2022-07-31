@@ -4,7 +4,7 @@ import { getDataFromApi } from "../../services/getDataFromApi";
 import BasicBar from "../Charts/touristNumber/BasicBar";
 import LineChart from "../Charts/touristNumber/LineChart";
 import StackedBarChart from "../Charts/touristNumber/StackedBarChart";
-import "./TouristNumberGraph";
+import "./TouristNumberGraph.css";
 
 const TouristNumberGraph: React.FC = () => {
   const [data, setData] = useState<any[]>([]);
@@ -17,7 +17,7 @@ const TouristNumberGraph: React.FC = () => {
     <div>
       <IonList>
         <IonListHeader>
-          <h2>Visualización de los datos</h2>
+          <h1>Visualización de los datos</h1>
         </IonListHeader>
         <IonItemGroup>
           <LineChart data={[...data]} />

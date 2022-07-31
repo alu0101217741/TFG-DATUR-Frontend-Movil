@@ -15,8 +15,9 @@
 }
 
 .tourist-number-nationalities-container h1 {
-  font-size: 30px;
+  font-size: 35px;
   text-shadow: 0.06em 0 black;
   text-align: center;
   font-weight: 600;
+  font-family: Oswald !important;
 }

@@ -144,7 +144,7 @@ const BasicBar: React.FC<ApiDataInterface> = ({ data }) => {
     <div>
       <IonList>
         <IonListHeader>
-          <h3>Distribución de los turistas</h3>
+          <h2>Distribución de los turistas</h2>
         </IonListHeader>
         <IonItemGroup>
           <IonItem lines="none">
@@ -155,7 +155,7 @@ const BasicBar: React.FC<ApiDataInterface> = ({ data }) => {
               type and scrambled it to make a type specimen book.
             </p>
           </IonItem>
-          <IonItem>
+          <div className="select-container">
             <IonSelect
               placeholder={years[0]}
               onIonChange={(e) => updateChartWithYear(e.detail.value)}
@@ -165,7 +165,7 @@ const BasicBar: React.FC<ApiDataInterface> = ({ data }) => {
               <IonSelectOption value={years[1]}>{years[1]}</IonSelectOption>
               <IonSelectOption value={years[0]}>{years[0]}</IonSelectOption>
             </IonSelect>
-          </IonItem>
+          </div>
           <HighchartsReact
             highcharts={Highcharts}
             options={chartOptions}

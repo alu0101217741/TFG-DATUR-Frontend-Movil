@@ -172,7 +172,7 @@ const StackedBarChart: React.FC<ApiDataInterface> = ({ data }) => {
     <div>
       <IonList>
         <IonListHeader>
-          <h3>Nacionalidades que visitan Canarias</h3>
+          <h2>Nacionalidades que visitan Canarias</h2>
         </IonListHeader>
         <IonItemGroup>
           <IonItem lines="none">
@@ -186,7 +186,7 @@ const StackedBarChart: React.FC<ApiDataInterface> = ({ data }) => {
               distribución de los turistas a lo largo del año.
             </p>
           </IonItem>
-          <IonItem>
+          <div className="select-container">
             <IonSelect
               placeholder={years[0]}
               onIonChange={(e) => updateChartWithYear(e.detail.value)}
@@ -196,7 +196,7 @@ const StackedBarChart: React.FC<ApiDataInterface> = ({ data }) => {
               <IonSelectOption value={years[1]}>{years[1]}</IonSelectOption>
               <IonSelectOption value={years[0]}>{years[0]}</IonSelectOption>
             </IonSelect>
-          </IonItem>
+          </div>
           <HighchartsReact
             highcharts={Highcharts}
             options={chartOptions}

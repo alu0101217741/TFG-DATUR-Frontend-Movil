@@ -1,3 +1,38 @@
-.section-title {
+ion-list-header h2 {
+  font-family: Oswald !important;
   color: rgb(0, 126, 167);
+  font-size: 25px;
+}
+
+ion-item p {
+  font-family: Roboto-Regular !important;
+  font-size: 15px;
+}
+
+.select-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+ion-select {
+  font-family: Oswald !important;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(0, 126, 167);
+  opacity: 1;
+  --placeholder-color: rgb(0, 126, 167);
+  --placeholder-opacity: 1;
+  width: 20%;
+  justify-content: center;
+  border-radius: 1em;
+  box-shadow: 1px 2px 9px rgba(56, 126, 255, 0.411);
+  width: 25%;
+  height: 50px;
+  margin-bottom: 0.8em;
+}
+
+ion-select::part(icon) {
+  color: rgb(0, 126, 167);
+  opacity: 1;
 }

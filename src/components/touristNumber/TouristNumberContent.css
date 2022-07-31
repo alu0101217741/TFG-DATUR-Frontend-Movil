@@ -16,3 +16,14 @@
   align-items: center;
   justify-content: center;
 }
+
+ion-list-header h1 {
+  font-family: Oswald !important;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.card-button-content p {
+  font-family: Oswald !important;
+  font-size: 15px;
+}
