@@ -1,6 +1,7 @@
 import { IonItemGroup, IonList, IonListHeader } from "@ionic/react";
 import { useEffect, useState } from "react";
 import { getDataFromApi } from "../../services/getDataFromApi";
+import BasicColumnTotalSpendChart from "../Charts/touristSpending/BasicColumnTotalSpendChart";
 import LineChart from "../Charts/touristSpending/LineChart";
 
 const TouristSpendingChart: React.FC = () => {
@@ -18,6 +19,10 @@ const TouristSpendingChart: React.FC = () => {
         </IonListHeader>
         <IonItemGroup>
           <LineChart data={[...data]} />
+          <IonItemGroup>
+            <h3>Gasto turístico por trimestre</h3>
+            <BasicColumnTotalSpendChart data={[...data]} />
+          </IonItemGroup>
         </IonItemGroup>
       </IonList>
     </div>
