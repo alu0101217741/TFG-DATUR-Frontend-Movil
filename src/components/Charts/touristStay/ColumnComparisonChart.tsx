@@ -235,7 +235,7 @@ const ColumnComparisonChart: React.FC<ApiDataInterface> = ({ data }) => {
     <div>
       <IonList>
         <IonListHeader>
-          <h3>Estancia media según lugar de residencia</h3>
+          <h2>Estancia media según lugar de residencia</h2>
         </IonListHeader>
         <IonItemGroup>
           <IonItem lines="none">
@@ -246,7 +246,7 @@ const ColumnComparisonChart: React.FC<ApiDataInterface> = ({ data }) => {
               type and scrambled it to make a type specimen book.
             </p>
           </IonItem>
-          <IonItem>
+          <div className="select-container">
             <IonSelect
               placeholder={activeYear}
               onIonChange={(e) => handleSelect(e.detail.value)}
@@ -255,7 +255,7 @@ const ColumnComparisonChart: React.FC<ApiDataInterface> = ({ data }) => {
                 <IonSelectOption value={year}>{year}</IonSelectOption>
               ))}
             </IonSelect>
-          </IonItem>
+          </div>
           <HighchartsReact
             highcharts={Highcharts}
             options={chartOptions}

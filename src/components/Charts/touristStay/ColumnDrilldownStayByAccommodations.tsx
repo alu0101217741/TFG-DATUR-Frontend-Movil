@@ -215,7 +215,7 @@ const ColumnDrilldownStayByAccommodations: React.FC<ApiDataInterface> = ({
     <div>
       <IonList>
         <IonListHeader>
-          <h3>Estancia media por alojamiento</h3>
+          <h2>Estancia media por alojamiento</h2>
         </IonListHeader>
         <IonItemGroup>
           <IonItem lines="none">
@@ -226,7 +226,7 @@ const ColumnDrilldownStayByAccommodations: React.FC<ApiDataInterface> = ({
               type and scrambled it to make a type specimen book.
             </p>
           </IonItem>
-          <IonItem>
+          <div className="select-container">
             <IonSelect
               placeholder={activeYear}
               onIonChange={(e) => handleSelect(e.detail.value)}
@@ -235,7 +235,7 @@ const ColumnDrilldownStayByAccommodations: React.FC<ApiDataInterface> = ({
                 <IonSelectOption value={year}>{year}</IonSelectOption>
               ))}
             </IonSelect>
-          </IonItem>
+          </div>
           <HighchartsReact
             highcharts={Highcharts}
             options={chartOptions}

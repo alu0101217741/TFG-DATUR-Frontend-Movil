@@ -12,7 +12,7 @@ const TouristStayContent: React.FC = () => {
     <div>
       <IonList>
         <IonListHeader>
-          <h2>Información de la sección</h2>
+          <h1>Información de la sección</h1>
         </IonListHeader>
         <IonItemGroup>
           <IonItem lines="none">
@@ -41,7 +41,7 @@ const TouristStayContent: React.FC = () => {
               target="_blank"
               class="card-link"
             >
-              <IonCardContent>
+              <IonCardContent className="card-button-content">
                 <p>
                   Turistas que han visitado Canarias según lugares de residencia
                 </p>
@@ -56,7 +56,7 @@ const TouristStayContent: React.FC = () => {
               target="_blank"
               class="card-link"
             >
-              <IonCardContent>
+              <IonCardContent className="card-button-content">
                 <p>
                   Turistas según tipos de alojamiento por países de residencia
                 </p>

@@ -17,7 +17,7 @@ const TouristStayChart: React.FC = () => {
     <div>
       <IonList>
         <IonListHeader>
-          <h2>Visualización de los datos</h2>
+          <h1>Visualización de los datos</h1>
         </IonListHeader>
         <IonItemGroup>
           <LineChart data={[...data]} />
