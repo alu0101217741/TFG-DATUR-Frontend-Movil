@@ -1,4 +1,4 @@
-import { IonContent } from "@ionic/react";
+import { IonItem, IonItemGroup, IonList, IonListHeader } from "@ionic/react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import React, { useEffect, useRef, useState } from "react";
@@ -9,6 +9,7 @@ interface ApiDataInterface {
 
 const LineChart: React.FC<ApiDataInterface> = ({ data }) => {
   const chartComponentRef = useRef<HighchartsReact.RefObject>(null);
+
   const [chartOptions, setChartOptions] = useState<any>({
     chart: {
       shadow: true,
@@ -31,8 +32,8 @@ const LineChart: React.FC<ApiDataInterface> = ({ data }) => {
     },
     legend: {
       layout: "vertical",
-      align: "right",
-      verticalAlign: "middle",
+      align: "center",
+      verticalAlign: "bottom",
     },
     plotOptions: {
       line: {
@@ -64,13 +65,28 @@ const LineChart: React.FC<ApiDataInterface> = ({ data }) => {
   }, [data]);
 
   return (
-    <IonContent>
-      <HighchartsReact
-        highcharts={Highcharts}
-        options={chartOptions}
-        ref={chartComponentRef}
-      />
-    </IonContent>
+    <div>
+      <IonList>
+        <IonListHeader>
+          <h3>Número total de turistas por año</h3>
+        </IonListHeader>
+        <IonItemGroup>
+          <IonItem lines="none">
+            <p>
+              Se proporciona una visión global acerca del número de turistas que
+              visitan las Islas Canarias, profundizando en las nacionalidades
+              que visitan Canarias y la distribución de estos turistas por
+              islas.
+            </p>
+          </IonItem>
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={chartOptions}
+            ref={chartComponentRef}
+          />
+        </IonItemGroup>
+      </IonList>
+    </div>
   );
 };
 

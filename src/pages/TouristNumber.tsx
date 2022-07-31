@@ -1,6 +1,7 @@
 import { IonContent, IonHeader, IonPage } from "@ionic/react";
 import Toolbar from "../components/Toolbar";
 import TouristNumberContent from "../components/touristNumber/TouristNumberContent";
+import TouristNumberGraph from "../components/touristNumber/TouristNumberGraph";
 import TouristNumberTitle from "../components/touristNumber/TouristNumberTitle";
 
 const TouristNumber: React.FC = () => {
@@ -12,6 +13,7 @@ const TouristNumber: React.FC = () => {
       <IonContent fullscreen>
         <TouristNumberTitle />
         <TouristNumberContent />
+        <TouristNumberGraph />
       </IonContent>
     </IonPage>
   );
