@@ -83,7 +83,11 @@ const ColumnComparisonChart: React.FC<ApiDataInterface> = ({ data }) => {
       },
     ],
     exporting: {
-      allowHTML: true,
+      buttons: {
+        contextButton: {
+          menuItems: ["viewFullscreen"],
+        },
+      },
     },
   });
 

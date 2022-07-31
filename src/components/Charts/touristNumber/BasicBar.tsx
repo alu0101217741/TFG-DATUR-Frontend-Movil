@@ -68,6 +68,13 @@ const BasicBar: React.FC<ApiDataInterface> = ({ data }) => {
     credits: {
       enabled: false,
     },
+    exporting: {
+      buttons: {
+        contextButton: {
+          menuItems: ["viewFullscreen"],
+        },
+      },
+    },
   });
 
   useEffect(() => {

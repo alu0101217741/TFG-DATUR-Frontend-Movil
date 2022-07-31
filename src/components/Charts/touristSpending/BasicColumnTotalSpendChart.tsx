@@ -63,6 +63,13 @@ const BasicColumnTotalSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
         borderWidth: 0,
       },
     },
+    exporting: {
+      buttons: {
+        contextButton: {
+          menuItems: ["viewFullscreen"],
+        },
+      },
+    },
   });
 
   useEffect(() => {

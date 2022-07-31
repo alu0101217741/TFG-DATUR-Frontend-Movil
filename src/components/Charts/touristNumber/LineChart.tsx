@@ -54,6 +54,13 @@ const LineChart: React.FC<ApiDataInterface> = ({ data }) => {
         data: [],
       },
     ],
+    exporting: {
+      buttons: {
+        contextButton: {
+          menuItems: ["viewFullscreen"],
+        },
+      },
+    },
   });
 
   useEffect(() => {

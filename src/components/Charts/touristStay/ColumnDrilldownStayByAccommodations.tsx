@@ -74,14 +74,7 @@ const ColumnDrilldownStayByAccommodations: React.FC<ApiDataInterface> = ({
     exporting: {
       buttons: {
         contextButton: {
-          menuItems: [
-            "downloadPNG",
-            "downloadJPEG",
-            "downloadPDF",
-            "downloadSVG",
-            "viewFullscreen",
-            "printChart",
-          ],
+          menuItems: ["viewFullscreen"],
         },
       },
     },

@@ -70,6 +70,13 @@ const StackedBarChart: React.FC<ApiDataInterface> = ({ data }) => {
         stacking: "normal",
       },
     },
+    exporting: {
+      buttons: {
+        contextButton: {
+          menuItems: ["viewFullscreen"],
+        },
+      },
+    },
   });
 
   useEffect(() => {

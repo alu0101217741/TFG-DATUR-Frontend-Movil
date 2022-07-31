@@ -73,14 +73,7 @@ const ColumnDrilldownStayByIslandChart: React.FC<ApiDataInterface> = ({
     exporting: {
       buttons: {
         contextButton: {
-          menuItems: [
-            "downloadPNG",
-            "downloadJPEG",
-            "downloadPDF",
-            "downloadSVG",
-            "viewFullscreen",
-            "printChart",
-          ],
+          menuItems: ["viewFullscreen"],
         },
       },
     },
