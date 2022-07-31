@@ -1,14 +1,25 @@
-.card-container h2 {
+.card-container h1 {
   color: #003459;
-  font-size: 1.5em;
+  font-size: 1.9em;
   font-weight: 800;
   text-align: center;
+  font-family: Oswald !important;
 }
 
 .card-style {
   box-shadow: 0 6px 15px rgba(56, 126, 255, 0.281);
   border-radius: 10px;
   margin-bottom: 2em;
+  font-family: Roboto-Regular !important;
+}
+
+.card-style ion-card-title {
+  font-family: Oswald !important;
+  font-size: 27px;
+}
+
+.main-card-text {
+  color: rgb(0, 0, 0);
 }
 
 .cards-item-pic-wrap {

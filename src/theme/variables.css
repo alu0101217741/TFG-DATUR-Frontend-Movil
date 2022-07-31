@@ -233,3 +233,23 @@ http://ionicframework.com/docs/theming/ */
     --ion-card-background: #1e1e1e;
   }
 }
+
+@font-face {
+  font-family: "Oswald";
+  src: url("../../public/assets/fonts/Oswald-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../public/assets/fonts/Montserrat-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "ConcertOne";
+  src: url("../../public/assets/fonts/ConcertOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../../public/assets/fonts/Roboto-Regular.ttf");
+}

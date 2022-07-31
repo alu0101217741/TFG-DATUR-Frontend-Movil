@@ -15,11 +15,15 @@
   box-shadow: 0px 0px 7px black;
   color: #fff;
   margin-bottom: 2em;
-  font-weight: 600;
+  font-weight: 700;
   text-shadow: 0.06em 0 black;
+  font-family: Oswald !important;
+  font-size: 20px;
 }
 
-.slogan-container h2 {
-  font-weight: 600;
+.slogan-container h1 {
+  font-family: Oswald !important;
+  font-weight: 700;
+  font-size: 30px;
   text-shadow: 0.06em 0 black;
 }

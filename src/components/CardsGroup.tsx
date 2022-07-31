@@ -5,7 +5,7 @@ const CardsGroup: React.FC = () => {
   return (
     <>
       <div className="card-container">
-        <h2>Nuestras secciones</h2>
+        <h1>Nuestras secciones</h1>
       </div>
       <div className="ion-padding">
         <Card

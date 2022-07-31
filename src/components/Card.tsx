@@ -27,7 +27,7 @@ const Card: React.FC<ContainerProps> = (props) => {
           <IonCardTitle>{props.title}</IonCardTitle>
         </IonCardHeader>
         <IonCardContent>
-          <p> {props.text} </p>
+          <p className="main-card-text"> {props.text} </p>
           <p className="cards-item-details">{props.details}</p>
         </IonCardContent>
       </IonCard>
