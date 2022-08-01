@@ -11,14 +11,16 @@ import {
 } from "@ionic/react";
 
 import {
-  archiveOutline,
-  archiveSharp,
-  heartOutline,
-  heartSharp,
+  barChartOutline,
+  barChartSharp,
   home,
   homeSharp,
-  paperPlaneOutline,
-  paperPlaneSharp,
+  pieChartOutline,
+  pieChartSharp,
+  statsChartOutline,
+  statsChartSharp,
+  trendingUpOutline,
+  trendingUpSharp,
 } from "ionicons/icons";
 import { useLocation } from "react-router-dom";
 import "./Menu.css";
@@ -40,26 +42,26 @@ const appPages: AppPage[] = [
   {
     title: "Número de turistas",
     url: "/tourist-number",
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp,
+    iosIcon: trendingUpOutline,
+    mdIcon: trendingUpSharp,
   },
   {
     title: "Gasto turístico",
     url: "/tourist-spending",
-    iosIcon: heartOutline,
-    mdIcon: heartSharp,
+    iosIcon: barChartOutline,
+    mdIcon: barChartSharp,
   },
   {
     title: "Estancia turística",
     url: "/tourist-stay",
-    iosIcon: heartOutline,
-    mdIcon: heartSharp,
+    iosIcon: pieChartOutline,
+    mdIcon: pieChartSharp,
   },
   {
     title: "Expectativas turísticas",
     url: "/tourist-expectations",
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp,
+    iosIcon: statsChartOutline,
+    mdIcon: statsChartSharp,
   },
 ];
 
