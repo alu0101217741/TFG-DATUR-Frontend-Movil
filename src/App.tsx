@@ -27,6 +27,7 @@ import "@ionic/react/css/text-alignment.css";
 import "@ionic/react/css/text-transformation.css";
 
 /* Theme variables */
+import TouristExpectations from "./pages/TouristExpectations";
 import TouristNumber from "./pages/TouristNumber";
 import TouristStay from "./pages/TouristStay";
 import "./theme/variables.css";
@@ -44,6 +45,10 @@ const App: React.FC = () => {
             <Route path="/tourist-number" component={TouristNumber} />
             <Route path="/tourist-spending" component={TouristSpending} />
             <Route path="/tourist-stay" component={TouristStay} />
+            <Route
+              path="/tourist-expectations"
+              component={TouristExpectations}
+            />
             <Redirect exact from="/" to="/home" />
           </IonRouterOutlet>
         </IonSplitPane>
