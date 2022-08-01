@@ -1,0 +1,23 @@
+.tourist-expectations-container {
+  background: url("../../../public/assets/images/numberTouristTitle.jpg") center
+    center/cover no-repeat;
+  color: #fff;
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 7px black;
+  object-fit: contain;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
+}
+
+.tourist-expectations-container h1 {
+  font-size: 35px;
+  text-shadow: 0.06em 0 black;
+  text-align: center;
+  font-weight: 600;
+  font-family: Oswald !important;
+}
