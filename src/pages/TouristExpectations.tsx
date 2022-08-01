@@ -1,5 +1,6 @@
 import { IonContent, IonHeader, IonPage } from "@ionic/react";
 import Toolbar from "../components/Toolbar";
+import BusinessProgressGraph from "../components/touristExpectations/BusinessProgressGraph";
 import OccupancyRateForecastGraph from "../components/touristExpectations/OccupancyRateForecastGraph";
 import TouristExpectationsContent from "../components/touristExpectations/TouristExpectationsContent";
 import TouristExpectationsTitle from "../components/touristExpectations/TouristExpectationsTitle";
@@ -14,6 +15,7 @@ const TouristExpectations: React.FC = () => {
         <TouristExpectationsTitle />
         <TouristExpectationsContent />
         <OccupancyRateForecastGraph />
+        <BusinessProgressGraph />
       </IonContent>
     </IonPage>
   );

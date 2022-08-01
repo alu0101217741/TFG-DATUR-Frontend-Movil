@@ -77,7 +77,7 @@ const SemiCircleDonutChart: React.FC<ApiDataInterface> = ({ data }) => {
         startAngle: -90,
         endAngle: 90,
         center: ["50%", "90%"],
-        size: "110%",
+        size: "120%",
         showInLegend: true,
       },
     },
