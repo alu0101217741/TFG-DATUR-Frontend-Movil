@@ -8,8 +8,11 @@ import {
 } from "@ionic/react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import highcharts3d from "highcharts/highcharts-3d";
 import React, { useEffect, useRef, useState } from "react";
 import "./BasicColumnSpendChart.css";
+
+highcharts3d(Highcharts);
 
 function dataMapping(data: any) {
   const valuesAux = {
@@ -70,16 +73,19 @@ const BasicColumnSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
   const [activeYear, setActiveYear] = useState();
   const [chartOptions, setChartOptions] = useState<any>({
     chart: {
-      plotBackgroundColor: null,
-      plotBorderWidth: null,
-      plotShadow: false,
       type: "pie",
       shadow: true,
+      options3d: {
+        enabled: true,
+        alpha: 45,
+        beta: 0,
+      },
     },
     plotOptions: {
       pie: {
         allowPointSelect: true,
         cursor: "pointer",
+        depth: 35,
         dataLabels: {
           enabled: false,
         },

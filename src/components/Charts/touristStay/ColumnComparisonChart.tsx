@@ -239,7 +239,7 @@ const ColumnComparisonChart: React.FC<ApiDataInterface> = ({ data }) => {
     <div>
       <IonList>
         <IonListHeader>
-          <h2>Estancia media según lugar de residencia</h2>
+          <h2>Estancia media por lugar de residencia</h2>
         </IonListHeader>
         <IonItemGroup>
           <IonItem lines="none">
