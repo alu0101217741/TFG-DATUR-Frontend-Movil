@@ -30,6 +30,7 @@ import "@ionic/react/css/text-transformation.css";
 import TouristExpectations from "./pages/TouristExpectations";
 import TouristNumber from "./pages/TouristNumber";
 import TouristStay from "./pages/TouristStay";
+import AboutUs from "./pages/AboutUs";
 import "./theme/variables.css";
 
 setupIonicReact();
@@ -48,6 +49,10 @@ const App: React.FC = () => {
             <Route
               path="/tourist-expectations"
               component={TouristExpectations}
+            />
+            <Route
+              path="/about-us"
+              component={AboutUs}
             />
             <Redirect exact from="/" to="/home" />
           </IonRouterOutlet>

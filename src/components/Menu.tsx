@@ -21,6 +21,8 @@ import {
   statsChartSharp,
   trendingUpOutline,
   trendingUpSharp,
+  informationCircleOutline,
+  informationCircle
 } from "ionicons/icons";
 import { useLocation } from "react-router-dom";
 import "./Menu.css";
@@ -62,6 +64,12 @@ const appPages: AppPage[] = [
     url: "/tourist-expectations",
     iosIcon: statsChartOutline,
     mdIcon: statsChartSharp,
+  },
+  {
+    title: "Sobre nosotros",
+    url: "/about-us",
+    iosIcon: informationCircleOutline,
+    mdIcon: informationCircle,
   },
 ];
 
