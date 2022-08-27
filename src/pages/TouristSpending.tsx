@@ -14,7 +14,6 @@ const TouristSpending: React.FC = () => {
         <TouristSpendingTitle />
         <TouristSpendingContent />
         <TouristSpendingChart />
-        <h1>Añadir lo de gasto por nacionalidad</h1>
       </IonContent>
     </IonPage>
   );

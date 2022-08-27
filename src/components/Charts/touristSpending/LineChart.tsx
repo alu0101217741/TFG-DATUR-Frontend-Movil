@@ -70,7 +70,7 @@ const LineChart: React.FC<ApiDataInterface> = ({ data }) => {
     <div>
       <IonList>
         <IonListHeader>
-          <h2>Estancia media por año</h2>
+          <h2>Evolución del gasto turístico</h2>
         </IonListHeader>
         <IonItemGroup>
           <IonItem lines="none">

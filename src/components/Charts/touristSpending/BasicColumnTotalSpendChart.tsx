@@ -1,11 +1,4 @@
-import {
-  IonItem,
-  IonItemGroup,
-  IonList,
-  IonListHeader,
-  IonSelect,
-  IonSelectOption,
-} from "@ionic/react";
+import { IonItem, IonItemGroup, IonList, IonListHeader } from "@ionic/react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import highcharts3d from "highcharts/highcharts-3d";
@@ -14,23 +7,12 @@ import "./BasicColumnTotalSpendChart.css";
 
 highcharts3d(Highcharts);
 
-enum TimeOption {
-  YEAR = "Año",
-  MONTH = "Trimestre",
-}
-
 interface ApiDataInterface {
   data: any;
 }
 
 const BasicColumnTotalSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
   const chartComponentRef = useRef<HighchartsReact.RefObject>(null);
-
-  const [timeOption, setTimeOption] = useState<any>();
-
-  const [trimestralData, setTrimestralData] = useState<any>([]);
-
-  const [annualData, setAnnualData] = useState<any>([]);
 
   const [chartOptions, setChartOptions] = useState<any>({
     chart: {
@@ -116,58 +98,21 @@ const BasicColumnTotalSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
       });
     });
 
-    setTrimestralData(values);
-
-    setTimeOption(TimeOption.YEAR);
-
-    const yearsValues = [0, 0, 0, 0, 0];
-
-    for (const value of values) {
-      yearsValues[0] += value.data[0] || 0;
-      yearsValues[1] += value.data[1] || 0;
-      yearsValues[2] += value.data[2] || 0;
-      yearsValues[3] += value.data[3] || 0;
-      yearsValues[4] += value.data[4] || 0;
-    }
-
-    const annualDataValues = [
-      {
-        name: "Gasto total",
-        data: yearsValues,
-      },
-    ];
-
-    setAnnualData(annualDataValues);
-
     setChartOptions({
       xAxis: {
         categories: dataYears.reverse(),
       },
-      series: annualDataValues,
+      series: values,
     });
 
     chartComponentRef.current?.chart.reflow();
   }, [data]);
 
-  const handleSelect = (timeOption: any) => {
-    setTimeOption(timeOption);
-
-    let values = trimestralData;
-
-    if (timeOption === TimeOption.YEAR) {
-      values = annualData;
-    }
-
-    setChartOptions({
-      series: values,
-    });
-  };
-
   return (
     <div>
       <IonList>
         <IonListHeader>
-          <h2>Gasto turístico por trimestre</h2>
+          <h2>Gasto turístico por año y trimestre</h2>
         </IonListHeader>
         <IonItemGroup>
           <IonItem lines="none">
@@ -178,19 +123,7 @@ const BasicColumnTotalSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
               type and scrambled it to make a type specimen book.
             </p>
           </IonItem>
-          <div className="select-container select-time">
-            <IonSelect
-              placeholder={timeOption}
-              onIonChange={(e) => handleSelect(e.detail.value)}
-            >
-              <IonSelectOption value={TimeOption.YEAR}>
-                {TimeOption.YEAR}
-              </IonSelectOption>
-              <IonSelectOption value={TimeOption.MONTH}>
-                {TimeOption.MONTH}
-              </IonSelectOption>
-            </IonSelect>
-          </div>
+
           <HighchartsReact
             highcharts={Highcharts}
             options={chartOptions}
