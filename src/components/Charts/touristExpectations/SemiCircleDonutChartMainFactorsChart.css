@@ -1,4 +1,13 @@
 .select-factor {
-  margin-left: 1em;
-  margin-right: 1em;
+  font-family: Oswald !important;
+  font-weight: 550;
+  font-size: 18px;
+  color: rgb(0, 126, 167);
+  opacity: 1;
+  border-radius: 1em;
+  box-shadow: 1px 0px 8px rgba(56, 126, 255, 0.411);
+  margin-bottom: 0.4em;
+  margin-top: 0.4em;
+  margin-left: 2em;
+  margin-right: 2em;
 }

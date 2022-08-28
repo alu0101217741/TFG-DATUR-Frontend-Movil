@@ -196,6 +196,7 @@ const SemiCircleDonutChartBussinesChart: React.FC<ApiDataInterface> = ({
             name: "Expectativa marcha del negocio",
             innerSize: "50%",
             data: businessTendencyFirstChart,
+            colors: ["#10A610", "#F28F43", "#B52323"],
           },
         ],
       });
@@ -225,14 +226,17 @@ const SemiCircleDonutChartBussinesChart: React.FC<ApiDataInterface> = ({
 
   return (
     <div>
-      <IonList lines="none">
-        <IonListHeader className="header-top">
+      <IonList lines="none" className="first-chart-top">
+        <IonListHeader>
           <h2>Marcha del negocio</h2>
         </IonListHeader>
-        <IonItemGroup className="item-group-top semicircle-style">
+        <IonListHeader>
+          <h3>{chartExplication.trimester}</h3>
+        </IonListHeader>
+        <IonItemGroup className="item-top semicircle-style">
           <IonItem lines="none">
             <p>
-              Estudiando la marcha del negocio para el{" "}
+              Estudiando la <b>marcha del negocio</b> para el{" "}
               {chartExplication.trimester.toLowerCase()}, en relación a{" "}
               {chartExplication.previousYear}, el {chartExplication.favorable}%
               de los hosteleros piensa que será favorable, mientras que el{" "}
@@ -247,9 +251,9 @@ const SemiCircleDonutChartBussinesChart: React.FC<ApiDataInterface> = ({
           />
           <IonItem lines="none">
             <p>
-              El Índice de Confianza Hotelera (ICH), aumenta respecto al{" "}
-              {chartExplication.trimester.split(" ")[0]} trimestre de{" "}
-              {chartExplication.previousYear} pasando de{" "}
+              El <b>Índice de Confianza Hotelera (ICH)</b>, aumenta respecto al{" "}
+              {chartExplication.trimester.split(" ")[0].toLowerCase()} trimestre
+              de {chartExplication.previousYear} pasando de{" "}
               {hotelConfidenceIndexes[1]} a {hotelConfidenceIndexes[0]}.
             </p>
           </IonItem>

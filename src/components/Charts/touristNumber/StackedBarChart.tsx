@@ -74,6 +74,9 @@ const StackedBarChart: React.FC<ApiDataInterface> = ({ data }) => {
       type: "bar",
       shadow: true,
     },
+    subtitle: {
+      text: 'Fuente: <a target="_blank" href="http://www.gobiernodecanarias.org/istac/">Instituto Canario de Estadística</a>',
+    },
     yAxis: {
       min: 0,
       title: {

@@ -9,8 +9,14 @@ import {
 } from "@ionic/react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import exportdata from "highcharts/modules/export-data";
+import exporting from "highcharts/modules/exporting";
 import React, { useEffect, useRef, useState } from "react";
+
 import "./LineChart.css";
+
+exporting(Highcharts);
+exportdata(Highcharts);
 
 interface ApiDataInterface {
   data: any;
@@ -74,6 +80,9 @@ const LineChart: React.FC<ApiDataInterface> = ({ data }) => {
         },
       },
     },
+    credits: {
+      enabled: false,
+    },
   });
 
   useEffect(() => {
@@ -120,7 +129,7 @@ const LineChart: React.FC<ApiDataInterface> = ({ data }) => {
 
   return (
     <div>
-      <IonList lines="none">
+      <IonList className="first-chart-top" lines="none">
         <IonListHeader>
           <h2>Número total de turistas por año</h2>
         </IonListHeader>

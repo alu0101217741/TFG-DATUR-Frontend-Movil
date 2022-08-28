@@ -136,12 +136,12 @@ const SemiCircleDonutChartMainFactorsChart: React.FC<ApiDataInterface> = ({
           dataSelected.mainFactorsExpectations.businessVolume.increase,
         ],
         [
-          "Descenso",
-          dataSelected.mainFactorsExpectations.businessVolume.decline,
-        ],
-        [
           "Estabilidad",
           dataSelected.mainFactorsExpectations.businessVolume.stability,
+        ],
+        [
+          "Descenso",
+          dataSelected.mainFactorsExpectations.businessVolume.decline,
         ],
       ];
 
@@ -149,8 +149,8 @@ const SemiCircleDonutChartMainFactorsChart: React.FC<ApiDataInterface> = ({
         trimester: trimester,
         previousYear: Number(year) - 1,
         increase: chartValue[0][1],
-        decrease: chartValue[1][1],
-        stability: chartValue[2][1],
+        stability: chartValue[1][1],
+        decrease: chartValue[2][1],
       });
 
       setActiveFactor(MainFactors.BUSINESS_VOLUME);
@@ -165,6 +165,7 @@ const SemiCircleDonutChartMainFactorsChart: React.FC<ApiDataInterface> = ({
             name: "Expectativa marcha del negocio",
             innerSize: "50%",
             data: chartValue,
+            colors: ["#10A610", "#F28F43", "#B52323"],
           },
         ],
       });
@@ -201,16 +202,16 @@ const SemiCircleDonutChartMainFactorsChart: React.FC<ApiDataInterface> = ({
 
     const chartValue = [
       ["Aumento", mainFactors.increase],
-      ["Descenso", mainFactors.decline],
       ["Estabilidad", mainFactors.stability],
+      ["Descenso", mainFactors.decline],
     ];
 
     setChartExplication({
       trimester: chartExplication.trimester,
       previousYear: chartExplication.previousYear,
       increase: chartValue[0][1],
-      decrease: chartValue[1][1],
-      stability: chartValue[2][1],
+      stability: chartValue[1][1],
+      decrease: chartValue[2][1],
     });
 
     setActiveFactor(mainFactorSelected);
@@ -225,6 +226,7 @@ const SemiCircleDonutChartMainFactorsChart: React.FC<ApiDataInterface> = ({
           name: "Expectativa marcha del negocio",
           innerSize: "50%",
           data: chartValue,
+          colors: ["#10A610", "#F28F43", "#B52323"],
         },
       ],
     });
@@ -239,7 +241,7 @@ const SemiCircleDonutChartMainFactorsChart: React.FC<ApiDataInterface> = ({
         <IonItemGroup className="item-group-top semicircle-style">
           <IonItem lines="none">
             <p>
-              En cuanto a los factores de la marcha del negocio para el{" "}
+              En cuanto a los <b>factores de la marcha del negocio</b> para el{" "}
               {chartExplication.trimester} trimestre de{" "}
               {chartExplication.previousYear + 1}, considerando la opción
               seleccionada <b>{activeFactor}</b>, el {chartExplication.increase}
@@ -248,7 +250,7 @@ const SemiCircleDonutChartMainFactorsChart: React.FC<ApiDataInterface> = ({
               {chartExplication.stability}% considera que se mantendrá estable.
             </p>
           </IonItem>
-          <IonItem className="custom-select select-factor" lines="none">
+          <IonItem className="select-factor" lines="none">
             <IonLabel>Factor:</IonLabel>
             <IonSelect
               placeholder={MainFactors.BUSINESS_VOLUME}

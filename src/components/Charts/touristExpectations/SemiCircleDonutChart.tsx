@@ -22,13 +22,13 @@ enum MONTHS {
 function trimesterMapper(trimesterInNumber: any) {
   switch (trimesterInNumber) {
     case "01":
-      return "primer";
+      return "Primer";
     case "04":
-      return "segundo";
+      return "Segundo";
     case "07":
-      return "tercer";
+      return "Tercer";
     case "10":
-      return "cuarto";
+      return "Cuarto";
     default:
       return "Trimestre no válido";
   }
@@ -119,7 +119,7 @@ const SemiCircleDonutChart: React.FC<ApiDataInterface> = ({ data }) => {
       shadow: true,
     },
     title: {
-      text: "Grado de ocupación previsto para cada mes",
+      text: "Índice de ocupación previsto para cada mes",
     },
     subtitle: {
       text: 'Fuente: <a target="_blank" href="http://www.gobiernodecanarias.org/istac/">Instituto Canario de Estadística</a>',
@@ -170,13 +170,13 @@ const SemiCircleDonutChart: React.FC<ApiDataInterface> = ({ data }) => {
 
       let chartMonths;
 
-      if (trimester === "primer")
+      if (trimester === "Primer")
         chartMonths = [MONTHS.JANUARY, MONTHS.FEBRUARY, MONTHS.MARCH];
-      if (trimester === "segundo")
+      if (trimester === "Segundo")
         chartMonths = [MONTHS.APRIL, MONTHS.MAY, MONTHS.JUNE];
-      if (trimester === "tercer")
+      if (trimester === "Tercer")
         chartMonths = [MONTHS.JULY, MONTHS.AUGUST, MONTHS.SEPTEMBER];
-      if (trimester === "cuarto")
+      if (trimester === "Cuarto")
         chartMonths = [MONTHS.OCTUBER, MONTHS.NOVEMBER, MONTHS.DECEMBER];
 
       setChartMonths(chartMonths);
@@ -203,9 +203,10 @@ const SemiCircleDonutChart: React.FC<ApiDataInterface> = ({ data }) => {
             innerSize: "50%",
             data: [
               ["Aumento", dataToFirstChart[0]],
-              ["Descenso", dataToFirstChart[1]],
               ["Estabilidad", dataToFirstChart[2]],
+              ["Descenso", dataToFirstChart[1]],
             ],
+            colors: ["#10A610", "#F28F43", "#B52323"],
           },
         ],
       });
@@ -238,15 +239,21 @@ const SemiCircleDonutChart: React.FC<ApiDataInterface> = ({ data }) => {
 
   return (
     <div>
-      <IonList>
+      <IonList className="first-chart-top">
         <IonListHeader>
           <h2>Grado de ocupación</h2>
         </IonListHeader>
-        <IonItemGroup className="item-group-top semicircle-style">
+        <IonListHeader>
+          <h3>
+            {chartExplication.trimester} trimestre{" "}
+            {chartExplication.previousYear + 1}
+          </h3>
+        </IonListHeader>
+        <IonItemGroup className="item-top semicircle-style">
           <IonItem lines="none">
             <p>
-              Analizando la tendencia del grado de ocupación para el{" "}
-              {chartExplication.trimester} trimestre de{" "}
+              Analizando la tendencia del <b>grado de ocupación</b> para el{" "}
+              {chartExplication.trimester.toLowerCase()} trimestre de{" "}
               {chartExplication.previousYear + 1}, en relación a{" "}
               {chartExplication.previousYear}, el {chartExplication.increase}%
               de los hosteleros piensa que subirá, mientras que el{" "}
@@ -262,8 +269,8 @@ const SemiCircleDonutChart: React.FC<ApiDataInterface> = ({ data }) => {
           <IonItem lines="none">
             <p>
               Además, los hosteleros esperan que para el mes de{" "}
-              {chartMonths[0]?.toLowerCase()} el índice de ocupación hotelera se
-              sitúe en el {secondChartExplication[0]}%, para{" "}
+              {chartMonths[0]?.toLowerCase()} el <b>índice de ocupación</b>{" "}
+              hotelera se sitúe en el {secondChartExplication[0]}%, para{" "}
               {chartMonths[1]?.toLowerCase()} en el {secondChartExplication[1]}%
               y para {chartMonths[2]?.toLowerCase()} en el{" "}
               {secondChartExplication[2]}%.

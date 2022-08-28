@@ -20,14 +20,14 @@ const TouristExpectationsContent: React.FC = () => {
               En esta sección se ofrece una visión sobre el futuro del sector
               turístico canario, a través de una serie de expectativas basadas
               en las opiniones de los gestores de los establecimientos hoteleros
-              de Canarias.
+              de Canarias. Estas expectativas se centran en el grado de
+              ocupación y en la marcha del negocio.
             </p>
           </IonItem>
           <IonItem lines="none">
             <p>
-              Estas expectativas se centran en el grado de ocupación y en la
-              marcha del negocio. Para generar estas gráficas se han procesado
-              los siguientes datasets del repositorio &nbsp;
+              Para generar estas gráficas se han procesado los siguientes
+              datasets del repositorio &nbsp;
               <b>
                 <a
                   target="_blank"

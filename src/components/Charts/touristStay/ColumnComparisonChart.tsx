@@ -266,10 +266,10 @@ const ColumnComparisonChart: React.FC<ApiDataInterface> = ({ data }) => {
               Se muestra la estancia media de los turistas en Canarias según su
               país de origen. Se ofrece la posibilidad de visualizar esta
               información para una gran cantidad de años, además también se
-              permite comparar la información del año seleccionado con cualquier
+              puede comparar la información del año seleccionado con cualquier
               otro dentro de los disponibles. Cabe destacar que en la fuente
               oficial sólo existían datos para España a partir de 2019, por ello
-              en las gráficas esta columna se muestra a cero para años
+              en las gráficas, esta columna se muestra a cero para años
               anteriores.
             </p>
           </IonItem>
@@ -281,7 +281,9 @@ const ColumnComparisonChart: React.FC<ApiDataInterface> = ({ data }) => {
               cancelText="Cancelar"
             >
               {years.map((year) => (
-                <IonSelectOption value={year}>{year}</IonSelectOption>
+                <IonSelectOption value={year} key={year}>
+                  {year}
+                </IonSelectOption>
               ))}
             </IonSelect>
           </IonItem>
@@ -293,7 +295,9 @@ const ColumnComparisonChart: React.FC<ApiDataInterface> = ({ data }) => {
               cancelText="Cancelar"
             >
               {years.map((year) => (
-                <IonSelectOption value={year}>{year}</IonSelectOption>
+                <IonSelectOption value={year} key={year}>
+                  {year}
+                </IonSelectOption>
               ))}
             </IonSelect>
           </IonItem>

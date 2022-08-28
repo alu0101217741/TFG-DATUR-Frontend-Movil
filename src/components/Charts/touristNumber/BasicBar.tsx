@@ -44,12 +44,12 @@ const BasicBar: React.FC<ApiDataInterface> = ({ data }) => {
       shadow: true,
     },
     subtitle: {
-      text: 'Fuente: <a href="http://www.gobiernodecanarias.org/istac/">Instituto Canario de Estadística</a>',
+      text: 'Fuente: <a target="_blank" href="http://www.gobiernodecanarias.org/istac/">Instituto Canario de Estadística</a>',
     },
     yAxis: {
       min: 0,
       title: {
-        text: "Número de turistas (millones)",
+        text: "Número de turistas",
         align: "high",
       },
       labels: {
@@ -155,8 +155,12 @@ const BasicBar: React.FC<ApiDataInterface> = ({ data }) => {
         <IonItemGroup className="item-group-top">
           <IonItem>
             <p>
-              Se representa la evolución que ha experimentado la cifra anual de
-              turistas que visitan las Islas Canarias.
+              Se muestra el número de turistas que visitan cada una de las
+              islas, se agrupan la cantidad de turistas que han visitado La
+              Gomera y el Hierro, ya que este valor se ha estimado con la
+              información del resto de islas y el total de turistas llegados a
+              Canarias. Se ha llevado a cabo la estimación debido a la falta de
+              esta información en la fuente oficial.
             </p>
           </IonItem>
           <IonItem className="custom-select" lines="none">

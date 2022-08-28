@@ -120,7 +120,7 @@ const LineChart: React.FC<ApiDataInterface> = ({ data }) => {
 
   return (
     <div>
-      <IonList lines="none">
+      <IonList lines="none" className="first-chart-top">
         <IonListHeader>
           <h2>Evolución de la estancia media</h2>
         </IonListHeader>

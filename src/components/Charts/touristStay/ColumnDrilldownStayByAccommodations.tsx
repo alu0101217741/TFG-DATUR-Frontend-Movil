@@ -248,7 +248,9 @@ const ColumnDrilldownStayByAccommodations: React.FC<ApiDataInterface> = ({
               onIonChange={(e) => handleSelect(e.detail.value)}
             >
               {years.map((year) => (
-                <IonSelectOption value={year}>{year}</IonSelectOption>
+                <IonSelectOption value={year} key={year}>
+                  {year}
+                </IonSelectOption>
               ))}
             </IonSelect>
           </IonItem>
