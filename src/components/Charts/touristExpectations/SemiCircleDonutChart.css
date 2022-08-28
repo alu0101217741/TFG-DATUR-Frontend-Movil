@@ -1,0 +1,29 @@
+.semicircle-style path.highcharts-point.highcharts-color-0 {
+  fill: rgb(16, 166, 16);
+}
+
+.semicircle-style path.highcharts-point.highcharts-color-1 {
+  fill: rgb(181, 35, 35);
+}
+
+.semicircle-style path.highcharts-point.highcharts-color-2 {
+  fill: rgb(242, 143, 67);
+}
+
+.semicircle-style
+  .highcharts-legend-item.highcharts-pie-series.highcharts-color-0
+  .highcharts-point {
+  fill: rgb(16, 166, 16);
+}
+
+.semicircle-style
+  .highcharts-legend-item.highcharts-pie-series.highcharts-color-1
+  .highcharts-point {
+  fill: rgb(181, 35, 35);
+}
+
+.semicircle-style
+  .highcharts-legend-item.highcharts-pie-series.highcharts-color-2
+  .highcharts-point {
+  fill: rgb(242, 143, 67);
+}

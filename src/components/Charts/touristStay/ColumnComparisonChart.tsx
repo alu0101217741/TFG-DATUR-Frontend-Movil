@@ -273,32 +273,30 @@ const ColumnComparisonChart: React.FC<ApiDataInterface> = ({ data }) => {
               anteriores.
             </p>
           </IonItem>
-          <div className="select-container">
-            <IonItem className="custom-select" lines="none">
-              <IonLabel>Año:</IonLabel>
-              <IonSelect
-                placeholder={activeYear}
-                onIonChange={(e) => handleActiveYear(e.detail.value)}
-                cancelText="Cancelar"
-              >
-                {years.map((year) => (
-                  <IonSelectOption value={year}>{year}</IonSelectOption>
-                ))}
-              </IonSelect>
-            </IonItem>
-            <IonItem className="custom-select" lines="none">
-              <IonLabel>Comparando con:</IonLabel>
-              <IonSelect
-                placeholder={activeYear}
-                onIonChange={(e) => handleComparativeYear(e.detail.value)}
-                cancelText="Cancelar"
-              >
-                {years.map((year) => (
-                  <IonSelectOption value={year}>{year}</IonSelectOption>
-                ))}
-              </IonSelect>
-            </IonItem>
-          </div>
+          <IonItem className="custom-select" lines="none">
+            <IonLabel>Año:</IonLabel>
+            <IonSelect
+              placeholder={activeYear}
+              onIonChange={(e) => handleActiveYear(e.detail.value)}
+              cancelText="Cancelar"
+            >
+              {years.map((year) => (
+                <IonSelectOption value={year}>{year}</IonSelectOption>
+              ))}
+            </IonSelect>
+          </IonItem>
+          <IonItem className="custom-select" lines="none">
+            <IonLabel>Comparando con:</IonLabel>
+            <IonSelect
+              placeholder={activeYear}
+              onIonChange={(e) => handleComparativeYear(e.detail.value)}
+              cancelText="Cancelar"
+            >
+              {years.map((year) => (
+                <IonSelectOption value={year}>{year}</IonSelectOption>
+              ))}
+            </IonSelect>
+          </IonItem>
           <HighchartsReact
             highcharts={Highcharts}
             options={chartOptions}

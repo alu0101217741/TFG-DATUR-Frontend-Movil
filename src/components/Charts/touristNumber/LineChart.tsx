@@ -131,26 +131,24 @@ const LineChart: React.FC<ApiDataInterface> = ({ data }) => {
               turistas que visitan las Islas Canarias.
             </p>
           </IonItem>
-          <div className="select-container">
-            <IonItem className="custom-select" lines="none">
-              <IonLabel>Tipo de gráfico:</IonLabel>
-              <IonSelect
-                placeholder={chartTypeToShow}
-                onIonChange={(e) => handleSelect(e.detail.value)}
-                cancelText="Cancelar"
-              >
-                <IonSelectOption value={ChartType.LINE}>
-                  {ChartType.LINE}
-                </IonSelectOption>
-                <IonSelectOption value={ChartType.AREA}>
-                  {ChartType.AREA}
-                </IonSelectOption>
-                <IonSelectOption value={ChartType.COLUMN}>
-                  {ChartType.COLUMN}
-                </IonSelectOption>
-              </IonSelect>
-            </IonItem>
-          </div>
+          <IonItem className="custom-select" lines="none">
+            <IonLabel>Tipo de gráfico:</IonLabel>
+            <IonSelect
+              placeholder={chartTypeToShow}
+              onIonChange={(e) => handleSelect(e.detail.value)}
+              cancelText="Cancelar"
+            >
+              <IonSelectOption value={ChartType.LINE}>
+                {ChartType.LINE}
+              </IonSelectOption>
+              <IonSelectOption value={ChartType.AREA}>
+                {ChartType.AREA}
+              </IonSelectOption>
+              <IonSelectOption value={ChartType.COLUMN}>
+                {ChartType.COLUMN}
+              </IonSelectOption>
+            </IonSelect>
+          </IonItem>
           <HighchartsReact
             highcharts={Highcharts}
             options={chartOptions}

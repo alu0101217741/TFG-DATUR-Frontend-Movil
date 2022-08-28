@@ -43,6 +43,16 @@ const SemiCircleDonutChartBussinesChart: React.FC<ApiDataInterface> = ({
   const chartComponentRef = useRef<HighchartsReact.RefObject>(null);
   const secondChartComponentRef = useRef<HighchartsReact.RefObject>(null);
 
+  const [chartExplication, setChartExplication] = useState({
+    trimester: "",
+    previousYear: 0,
+    favorable: "",
+    normal: "",
+    desfavorable: "",
+  });
+
+  const [hotelConfidenceIndexes, setHotelConfidenceIndexes] = useState<any>([]);
+
   const [chartOptions, setChartOptions] = useState<any>({
     chart: {
       plotBackgroundColor: null,
@@ -90,6 +100,16 @@ const SemiCircleDonutChartBussinesChart: React.FC<ApiDataInterface> = ({
         showInLegend: true,
       },
     },
+    exporting: {
+      buttons: {
+        contextButton: {
+          menuItems: ["viewFullscreen"],
+        },
+      },
+    },
+    credits: {
+      enabled: false,
+    },
   });
 
   const [secondChartOptions, setSecondChartOptions] = useState<any>({
@@ -124,6 +144,13 @@ const SemiCircleDonutChartBussinesChart: React.FC<ApiDataInterface> = ({
       layout: "bottom",
       align: "center",
     },
+    exporting: {
+      buttons: {
+        contextButton: {
+          menuItems: ["viewFullscreen"],
+        },
+      },
+    },
     credits: {
       enabled: false,
     },
@@ -132,6 +159,8 @@ const SemiCircleDonutChartBussinesChart: React.FC<ApiDataInterface> = ({
   useEffect(() => {
     if (data.length !== 0) {
       const dataSelected = data[0];
+
+      const year = dataSelected.trimester.slice(0, 4);
 
       const previousTrimester = trimesterMapper(dataSelected.trimester);
 
@@ -149,6 +178,16 @@ const SemiCircleDonutChartBussinesChart: React.FC<ApiDataInterface> = ({
         dataSelected.hotelConfidenceIndex,
         previousData.hotelConfidenceIndex,
       ];
+
+      setHotelConfidenceIndexes(hotelConfidenceIndexes);
+
+      setChartExplication({
+        trimester: trimesterLabelMapper(dataSelected.trimester),
+        previousYear: Number(year) - 1,
+        favorable: businessTendencyFirstChart[0][1],
+        normal: businessTendencyFirstChart[1][1],
+        desfavorable: businessTendencyFirstChart[2][1],
+      });
 
       setChartOptions({
         series: [
@@ -176,6 +215,7 @@ const SemiCircleDonutChartBussinesChart: React.FC<ApiDataInterface> = ({
           {
             name: "Indice de confianza hotelera",
             data: hotelConfidenceIndexes,
+            color: "#2f7ed8",
           },
         ],
       });
@@ -185,17 +225,19 @@ const SemiCircleDonutChartBussinesChart: React.FC<ApiDataInterface> = ({
 
   return (
     <div>
-      <IonList>
-        <IonListHeader>
+      <IonList lines="none">
+        <IonListHeader className="header-top">
           <h2>Marcha del negocio</h2>
         </IonListHeader>
-        <IonItemGroup>
+        <IonItemGroup className="item-group-top semicircle-style">
           <IonItem lines="none">
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+              Estudiando la marcha del negocio para el{" "}
+              {chartExplication.trimester.toLowerCase()}, en relación a{" "}
+              {chartExplication.previousYear}, el {chartExplication.favorable}%
+              de los hosteleros piensa que será favorable, mientras que el{" "}
+              {chartExplication.desfavorable}% opina que será desfavorable, por
+              último, el {chartExplication.normal}% considera que será normal.
             </p>
           </IonItem>
           <HighchartsReact
@@ -203,6 +245,14 @@ const SemiCircleDonutChartBussinesChart: React.FC<ApiDataInterface> = ({
             options={chartOptions}
             ref={chartComponentRef}
           />
+          <IonItem lines="none">
+            <p>
+              El Índice de Confianza Hotelera (ICH), aumenta respecto al{" "}
+              {chartExplication.trimester.split(" ")[0]} trimestre de{" "}
+              {chartExplication.previousYear} pasando de{" "}
+              {hotelConfidenceIndexes[1]} a {hotelConfidenceIndexes[0]}.
+            </p>
+          </IonItem>
           <HighchartsReact
             highcharts={Highcharts}
             options={secondChartOptions}

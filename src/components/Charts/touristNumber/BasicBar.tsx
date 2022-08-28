@@ -159,20 +159,18 @@ const BasicBar: React.FC<ApiDataInterface> = ({ data }) => {
               turistas que visitan las Islas Canarias.
             </p>
           </IonItem>
-          <div className="select-container">
-            <IonItem className="custom-select" lines="none">
-              <IonLabel>Año:</IonLabel>
-              <IonSelect
-                placeholder={years[0]}
-                onIonChange={(e) => updateChartWithYear(e.detail.value)}
-              >
-                <IonSelectOption value={years[3]}>{years[3]}</IonSelectOption>
-                <IonSelectOption value={years[2]}>{years[2]}</IonSelectOption>
-                <IonSelectOption value={years[1]}>{years[1]}</IonSelectOption>
-                <IonSelectOption value={years[0]}>{years[0]}</IonSelectOption>
-              </IonSelect>
-            </IonItem>
-          </div>
+          <IonItem className="custom-select" lines="none">
+            <IonLabel>Año:</IonLabel>
+            <IonSelect
+              placeholder={years[0]}
+              onIonChange={(e) => updateChartWithYear(e.detail.value)}
+            >
+              <IonSelectOption value={years[3]}>{years[3]}</IonSelectOption>
+              <IonSelectOption value={years[2]}>{years[2]}</IonSelectOption>
+              <IonSelectOption value={years[1]}>{years[1]}</IonSelectOption>
+              <IonSelectOption value={years[0]}>{years[0]}</IonSelectOption>
+            </IonSelect>
+          </IonItem>
           <HighchartsReact
             highcharts={Highcharts}
             options={chartOptions}

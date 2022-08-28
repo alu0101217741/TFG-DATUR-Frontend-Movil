@@ -17,33 +17,41 @@ const TouristExpectationsContent: React.FC = () => {
         <IonItemGroup>
           <IonItem lines="none">
             <p>
-              Se proporciona una visión global acerca del número de turistas que
-              visitan las Islas Canarias, profundizando en las nacionalidades
-              que visitan Canarias y la distribución de estos turistas por
-              islas.
+              En esta sección se ofrece una visión sobre el futuro del sector
+              turístico canario, a través de una serie de expectativas basadas
+              en las opiniones de los gestores de los establecimientos hoteleros
+              de Canarias.
             </p>
           </IonItem>
           <IonItem lines="none">
             <p>
-              Para generar estas gráficas se han utilizado dos datasets del
-              repositorio
-              <a href="https://datos.canarias.es/portal/">
-                Canarias Datos Abiertos
-              </a>
+              Estas expectativas se centran en el grado de ocupación y en la
+              marcha del negocio. Para generar estas gráficas se han procesado
+              los siguientes datasets del repositorio &nbsp;
+              <b>
+                <a
+                  target="_blank"
+                  href="https://datos.canarias.es/portal/"
+                  rel="noreferrer"
+                >
+                  Canarias Datos Abiertos
+                </a>
+              </b>
               :
             </p>
           </IonItem>
           <div className="center-card">
             <IonCard
               button={true}
-              href=""
+              href="https://datos.canarias.es/catalogos/general/dataset/balance-de-situacion-balance-de-expectativas-e-indices-de-confianza-hotelera-por-islas-de-canar1"
               mode="md"
               target="_blank"
               class="card-link"
             >
               <IonCardContent className="card-button-content">
                 <p>
-                  Turistas que han visitado Canarias según lugares de residencia
+                  Balance de situación, de expectativas e índices de confianza
+                  hotelera.
                 </p>
               </IonCardContent>
             </IonCard>
@@ -51,14 +59,31 @@ const TouristExpectationsContent: React.FC = () => {
           <div className="center-card">
             <IonCard
               button={true}
-              href=""
+              href="https://datos.canarias.es/catalogos/general/dataset/expectativas-de-la-marcha-del-negocio-respecto-al-trimestre-anterior-segun-categorias-de-los-es1"
               mode="md"
               target="_blank"
               class="card-link"
             >
               <IonCardContent className="card-button-content">
                 <p>
-                  Turistas según tipos de alojamiento por países de residencia
+                  Expectativas de la marcha del negocio respecto al trimestre
+                  anterior.
+                </p>
+              </IonCardContent>
+            </IonCard>
+          </div>
+          <div className="center-card">
+            <IonCard
+              button={true}
+              href="https://datos.canarias.es/catalogos/general/dataset/expectativas-de-los-principales-factores-de-la-marcha-del-negocio-respecto-a-otros-trimestres-s1"
+              mode="md"
+              target="_blank"
+              class="card-link"
+            >
+              <IonCardContent className="card-button-content">
+                <p>
+                  Expectativas de los principales factores de la marcha del
+                  negocio.
                 </p>
               </IonCardContent>
             </IonCard>

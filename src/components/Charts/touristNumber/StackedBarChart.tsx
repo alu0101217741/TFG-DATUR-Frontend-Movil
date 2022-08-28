@@ -320,57 +320,55 @@ const StackedBarChart: React.FC<ApiDataInterface> = ({ data }) => {
               información por año o por trimestre.
             </p>
           </IonItem>
-          <div className="select-container">
-            <IonItem className="custom-select" lines="none">
-              <IonLabel>Tipo de gráfico:</IonLabel>
-              <IonSelect
-                placeholder={chartTypeToShow}
-                onIonChange={(e) => handleTypeChart(e.detail.value)}
-                cancelText="Cancelar"
-              >
-                <IonSelectOption value={ChartType.BAR}>
-                  {ChartType.BAR}
-                </IonSelectOption>
-                <IonSelectOption value={ChartType.LINE}>
-                  {ChartType.LINE}
-                </IonSelectOption>
-                <IonSelectOption value={ChartType.AREA}>
-                  {ChartType.AREA}
-                </IonSelectOption>
-                <IonSelectOption value={ChartType.COLUMN}>
-                  {ChartType.COLUMN}
-                </IonSelectOption>
-              </IonSelect>
-            </IonItem>
-            <IonItem className="custom-select" lines="none">
-              <IonLabel>Año:</IonLabel>
-              <IonSelect
-                placeholder={String(activeYear)}
-                onIonChange={(e) => handleYear(e.detail.value)}
-                cancelText="Cancelar"
-              >
-                <IonSelectOption value={years[0]}>{years[0]}</IonSelectOption>
-                <IonSelectOption value={years[1]}>{years[1]}</IonSelectOption>
-                <IonSelectOption value={years[2]}>{years[2]}</IonSelectOption>
-                <IonSelectOption value={years[3]}>{years[3]}</IonSelectOption>
-              </IonSelect>
-            </IonItem>
-            <IonItem className="custom-select" lines="none">
-              <IonLabel>Organizar por:</IonLabel>
-              <IonSelect
-                placeholder={String(periodTime)}
-                onIonChange={(e) => handlePeriodTime(e.detail.value)}
-                cancelText="Cancelar"
-              >
-                <IonSelectOption value={PeriodTime.YEAR}>
-                  {PeriodTime.YEAR}
-                </IonSelectOption>
-                <IonSelectOption value={PeriodTime.TRIMESTER}>
-                  {PeriodTime.TRIMESTER}
-                </IonSelectOption>
-              </IonSelect>
-            </IonItem>
-          </div>
+          <IonItem className="custom-select" lines="none">
+            <IonLabel>Tipo de gráfico:</IonLabel>
+            <IonSelect
+              placeholder={chartTypeToShow}
+              onIonChange={(e) => handleTypeChart(e.detail.value)}
+              cancelText="Cancelar"
+            >
+              <IonSelectOption value={ChartType.BAR}>
+                {ChartType.BAR}
+              </IonSelectOption>
+              <IonSelectOption value={ChartType.LINE}>
+                {ChartType.LINE}
+              </IonSelectOption>
+              <IonSelectOption value={ChartType.AREA}>
+                {ChartType.AREA}
+              </IonSelectOption>
+              <IonSelectOption value={ChartType.COLUMN}>
+                {ChartType.COLUMN}
+              </IonSelectOption>
+            </IonSelect>
+          </IonItem>
+          <IonItem className="custom-select" lines="none">
+            <IonLabel>Año:</IonLabel>
+            <IonSelect
+              placeholder={String(activeYear)}
+              onIonChange={(e) => handleYear(e.detail.value)}
+              cancelText="Cancelar"
+            >
+              <IonSelectOption value={years[0]}>{years[0]}</IonSelectOption>
+              <IonSelectOption value={years[1]}>{years[1]}</IonSelectOption>
+              <IonSelectOption value={years[2]}>{years[2]}</IonSelectOption>
+              <IonSelectOption value={years[3]}>{years[3]}</IonSelectOption>
+            </IonSelect>
+          </IonItem>
+          <IonItem className="custom-select" lines="none">
+            <IonLabel>Organizar por:</IonLabel>
+            <IonSelect
+              placeholder={String(periodTime)}
+              onIonChange={(e) => handlePeriodTime(e.detail.value)}
+              cancelText="Cancelar"
+            >
+              <IonSelectOption value={PeriodTime.YEAR}>
+                {PeriodTime.YEAR}
+              </IonSelectOption>
+              <IonSelectOption value={PeriodTime.TRIMESTER}>
+                {PeriodTime.TRIMESTER}
+              </IonSelectOption>
+            </IonSelect>
+          </IonItem>
           <HighchartsReact
             highcharts={Highcharts}
             options={chartOptions}

@@ -241,19 +241,17 @@ const ColumnDrilldownStayByAccommodations: React.FC<ApiDataInterface> = ({
               tipo de alojamiento seleccionado.
             </p>
           </IonItem>
-          <div className="select-container">
-            <IonItem className="custom-select" lines="none">
-              <IonLabel>Año:</IonLabel>
-              <IonSelect
-                placeholder={activeYear}
-                onIonChange={(e) => handleSelect(e.detail.value)}
-              >
-                {years.map((year) => (
-                  <IonSelectOption value={year}>{year}</IonSelectOption>
-                ))}
-              </IonSelect>
-            </IonItem>
-          </div>
+          <IonItem className="custom-select" lines="none">
+            <IonLabel>Año:</IonLabel>
+            <IonSelect
+              placeholder={activeYear}
+              onIonChange={(e) => handleSelect(e.detail.value)}
+            >
+              {years.map((year) => (
+                <IonSelectOption value={year}>{year}</IonSelectOption>
+              ))}
+            </IonSelect>
+          </IonItem>
           <HighchartsReact
             highcharts={Highcharts}
             options={chartOptions}

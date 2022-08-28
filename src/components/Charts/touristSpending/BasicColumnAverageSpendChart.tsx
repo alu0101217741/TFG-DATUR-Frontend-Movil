@@ -181,22 +181,20 @@ const BasicColumnAverageSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
               trimestrales.
             </p>
           </IonItem>
-          <div className="select-container">
-            <IonItem className="custom-select" lines="none">
-              <IonLabel>Organizar por:</IonLabel>
-              <IonSelect
-                placeholder={timeOption}
-                onIonChange={(e) => handleSelect(e.detail.value)}
-              >
-                <IonSelectOption value={TimeOption.YEAR}>
-                  {TimeOption.YEAR}
-                </IonSelectOption>
-                <IonSelectOption value={TimeOption.MONTH}>
-                  {TimeOption.MONTH}
-                </IonSelectOption>
-              </IonSelect>
-            </IonItem>
-          </div>
+          <IonItem className="custom-select" lines="none">
+            <IonLabel>Organizar por:</IonLabel>
+            <IonSelect
+              placeholder={timeOption}
+              onIonChange={(e) => handleSelect(e.detail.value)}
+            >
+              <IonSelectOption value={TimeOption.YEAR}>
+                {TimeOption.YEAR}
+              </IonSelectOption>
+              <IonSelectOption value={TimeOption.MONTH}>
+                {TimeOption.MONTH}
+              </IonSelectOption>
+            </IonSelect>
+          </IonItem>
           <HighchartsReact
             highcharts={Highcharts}
             options={chartOptions}

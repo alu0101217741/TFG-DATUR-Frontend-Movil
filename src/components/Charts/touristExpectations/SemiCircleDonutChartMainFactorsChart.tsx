@@ -1,6 +1,7 @@
 import {
   IonItem,
   IonItemGroup,
+  IonLabel,
   IonList,
   IonListHeader,
   IonSelect,
@@ -29,10 +30,35 @@ interface ApiDataInterface {
   data: any;
 }
 
+function trimesterMapper(trimesterInNumber: string) {
+  switch (trimesterInNumber) {
+    case "01":
+      return "primer";
+    case "04":
+      return "segundo";
+    case "07":
+      return "tercer";
+    case "10":
+      return "cuarto";
+    default:
+      return "Trimestre no válido";
+  }
+}
+
 const SemiCircleDonutChartMainFactorsChart: React.FC<ApiDataInterface> = ({
   data,
 }) => {
   const chartComponentRef = useRef<HighchartsReact.RefObject>(null);
+
+  const [chartExplication, setChartExplication] = useState({
+    trimester: "",
+    previousYear: 0,
+    increase: "",
+    decrease: "",
+    stability: "",
+  });
+
+  const [activeFactor, setActiveFactor] = useState<any>();
 
   const [chartOptions, setChartOptions] = useState<any>({
     chart: {
@@ -80,6 +106,16 @@ const SemiCircleDonutChartMainFactorsChart: React.FC<ApiDataInterface> = ({
         showInLegend: true,
       },
     },
+    exporting: {
+      buttons: {
+        contextButton: {
+          menuItems: ["viewFullscreen"],
+        },
+      },
+    },
+    credits: {
+      enabled: false,
+    },
   });
 
   const [mainFactorsExpectations, setMainFactorsExpectations] = useState<any>();
@@ -87,6 +123,10 @@ const SemiCircleDonutChartMainFactorsChart: React.FC<ApiDataInterface> = ({
   useEffect(() => {
     if (data.length !== 0) {
       const dataSelected = data[0];
+
+      const year = dataSelected.trimester.slice(0, 4);
+
+      const trimester = trimesterMapper(dataSelected.trimester.slice(5));
 
       setMainFactorsExpectations(dataSelected.mainFactorsExpectations);
 
@@ -104,6 +144,16 @@ const SemiCircleDonutChartMainFactorsChart: React.FC<ApiDataInterface> = ({
           dataSelected.mainFactorsExpectations.businessVolume.stability,
         ],
       ];
+
+      setChartExplication({
+        trimester: trimester,
+        previousYear: Number(year) - 1,
+        increase: chartValue[0][1],
+        decrease: chartValue[1][1],
+        stability: chartValue[2][1],
+      });
+
+      setActiveFactor(MainFactors.BUSINESS_VOLUME);
 
       setChartOptions({
         title: {
@@ -155,6 +205,16 @@ const SemiCircleDonutChartMainFactorsChart: React.FC<ApiDataInterface> = ({
       ["Estabilidad", mainFactors.stability],
     ];
 
+    setChartExplication({
+      trimester: chartExplication.trimester,
+      previousYear: chartExplication.previousYear,
+      increase: chartValue[0][1],
+      decrease: chartValue[1][1],
+      stability: chartValue[2][1],
+    });
+
+    setActiveFactor(mainFactorSelected);
+
     setChartOptions({
       title: {
         text: "Expectativas<br>en " + title,
@@ -173,19 +233,23 @@ const SemiCircleDonutChartMainFactorsChart: React.FC<ApiDataInterface> = ({
   return (
     <div>
       <IonList>
-        <IonListHeader>
+        <IonListHeader className="header-top">
           <h2>Factores de la marcha del negocio</h2>
         </IonListHeader>
-        <IonItemGroup>
+        <IonItemGroup className="item-group-top semicircle-style">
           <IonItem lines="none">
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+              En cuanto a los factores de la marcha del negocio para el{" "}
+              {chartExplication.trimester} trimestre de{" "}
+              {chartExplication.previousYear + 1}, considerando la opción
+              seleccionada <b>{activeFactor}</b>, el {chartExplication.increase}
+              % de los hosteleros piensa que aumentará, mientras que el{" "}
+              {chartExplication.decrease}% opina que descenderá, por último, el{" "}
+              {chartExplication.stability}% considera que se mantendrá estable.
             </p>
           </IonItem>
-          <div className="select-container select-factor">
+          <IonItem className="custom-select select-factor" lines="none">
+            <IonLabel>Factor:</IonLabel>
             <IonSelect
               placeholder={MainFactors.BUSINESS_VOLUME}
               onIonChange={(e) => handleSelect(e.detail.value)}
@@ -203,7 +267,7 @@ const SemiCircleDonutChartMainFactorsChart: React.FC<ApiDataInterface> = ({
                 {MainFactors.PRICE_LEVEL}
               </IonSelectOption>
             </IonSelect>
-          </div>
+          </IonItem>
           <HighchartsReact
             highcharts={Highcharts}
             options={chartOptions}
