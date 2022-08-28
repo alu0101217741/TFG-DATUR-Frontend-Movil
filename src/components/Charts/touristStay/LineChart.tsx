@@ -32,7 +32,7 @@ const LineChart: React.FC<ApiDataInterface> = ({ data }) => {
       shadow: true,
     },
     title: {
-      text: "Evolución de la estancia media de turistas",
+      text: "Evolución de la estancia media",
     },
     subtitle: {
       text: 'Fuente: <a target="_blank" href="http://www.gobiernodecanarias.org/istac/">Instituto Canario de Estadística</a>',
@@ -133,7 +133,7 @@ const LineChart: React.FC<ApiDataInterface> = ({ data }) => {
             </p>
           </IonItem>
           <div className="select-container">
-            <IonItem className="custom-select">
+            <IonItem className="custom-select" lines="none">
               <IonLabel>Tipo de gráfico:</IonLabel>
               <IonSelect
                 placeholder={chartTypeToShow}

@@ -182,7 +182,7 @@ const BasicColumnAverageSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
             </p>
           </IonItem>
           <div className="select-container">
-            <IonItem className="custom-select">
+            <IonItem className="custom-select" lines="none">
               <IonLabel>Organizar por:</IonLabel>
               <IonSelect
                 placeholder={timeOption}

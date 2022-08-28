@@ -160,7 +160,7 @@ const BasicBar: React.FC<ApiDataInterface> = ({ data }) => {
             </p>
           </IonItem>
           <div className="select-container">
-            <IonItem className="custom-select ">
+            <IonItem className="custom-select" lines="none">
               <IonLabel>Año:</IonLabel>
               <IonSelect
                 placeholder={years[0]}

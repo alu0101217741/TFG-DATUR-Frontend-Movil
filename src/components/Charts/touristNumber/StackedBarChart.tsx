@@ -321,7 +321,7 @@ const StackedBarChart: React.FC<ApiDataInterface> = ({ data }) => {
             </p>
           </IonItem>
           <div className="select-container">
-            <IonItem className="custom-select">
+            <IonItem className="custom-select" lines="none">
               <IonLabel>Tipo de gráfico:</IonLabel>
               <IonSelect
                 placeholder={chartTypeToShow}
@@ -342,7 +342,7 @@ const StackedBarChart: React.FC<ApiDataInterface> = ({ data }) => {
                 </IonSelectOption>
               </IonSelect>
             </IonItem>
-            <IonItem className="custom-select">
+            <IonItem className="custom-select" lines="none">
               <IonLabel>Año:</IonLabel>
               <IonSelect
                 placeholder={String(activeYear)}
@@ -355,7 +355,7 @@ const StackedBarChart: React.FC<ApiDataInterface> = ({ data }) => {
                 <IonSelectOption value={years[3]}>{years[3]}</IonSelectOption>
               </IonSelect>
             </IonItem>
-            <IonItem className="custom-select">
+            <IonItem className="custom-select" lines="none">
               <IonLabel>Organizar por:</IonLabel>
               <IonSelect
                 placeholder={String(periodTime)}
