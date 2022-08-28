@@ -4,5 +4,6 @@ Highcharts.setOptions({
   lang: {
     exitFullscreen: "Salir de pantalla completa",
     viewFullscreen: "Ver en pantalla completa",
+    numericSymbols: [" k", " M", " MM"],
   },
 });

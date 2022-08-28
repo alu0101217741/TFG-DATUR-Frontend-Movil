@@ -5,6 +5,7 @@ import {
   IonListHeader,
   IonSelect,
   IonSelectOption,
+  IonLabel
 } from "@ionic/react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
@@ -80,6 +81,9 @@ const BasicColumnSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
         beta: 0,
       },
     },
+    subtitle: {
+      text: 'Fuente: <a target="_blank" href="http://www.gobiernodecanarias.org/istac/">Instituto Canario de Estadística</a>',
+    },
     plotOptions: {
       pie: {
         allowPointSelect: true,
@@ -91,12 +95,18 @@ const BasicColumnSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
         showInLegend: true,
       },
     },
+    tooltip: {
+      valueSuffix: " €",
+    },
     exporting: {
       buttons: {
         contextButton: {
           menuItems: ["viewFullscreen"],
         },
       },
+    },
+    credits: {
+      enabled: false,
     },
   });
 
@@ -149,20 +159,21 @@ const BasicColumnSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
 
   return (
     <div>
-      <IonList>
-        <IonListHeader>
+      <IonList lines="none">
+        <IonListHeader className="header-top">
           <h2>Desglose de gasto</h2>
         </IonListHeader>
-        <IonItemGroup>
-          <IonItem lines="none">
+        <IonItemGroup className="item-group-top">
+          <IonItem>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+              En la siguiente gráfica se desglosa el gasto turístico total del año
+              seleccionado, en los principales conceptos de gasto de los
+              visitantes durante su estancia en Canarias.
             </p>
           </IonItem>
           <div className="select-container">
+          <IonItem className="custom-select">
+            <IonLabel>Año:</IonLabel>
             <IonSelect
               placeholder={activeYear}
               onIonChange={(e) => handleSelect(e.detail.value)}
@@ -171,6 +182,7 @@ const BasicColumnSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
                 <IonSelectOption value={year}>{year}</IonSelectOption>
               ))}
             </IonSelect>
+            </IonItem>
           </div>
           <HighchartsReact
             highcharts={Highcharts}

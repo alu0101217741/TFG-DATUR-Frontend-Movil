@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { getDataFromApi } from "../../services/getDataFromApi";
 import BasicColumnAverageSpendChart from "../Charts/touristSpending/BasicColumnAverageSpendChart";
 import BasicColumnSpendChart from "../Charts/touristSpending/BasicColumnSpendChart";
-import BasicColumnTotalSpendChart from "../Charts/touristSpending/BasicColumnTotalSpendChart";
 import LineChart from "../Charts/touristSpending/LineChart";
 
 const TouristSpendingChart: React.FC = () => {
@@ -22,7 +21,6 @@ const TouristSpendingChart: React.FC = () => {
         <IonItemGroup>
           <LineChart data={[...data]} />
           <IonItemGroup>
-            <BasicColumnTotalSpendChart data={[...data]} />
             <BasicColumnAverageSpendChart data={[...data]} />
             <BasicColumnSpendChart data={[...data]} />
           </IonItemGroup>

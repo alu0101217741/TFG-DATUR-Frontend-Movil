@@ -2,8 +2,10 @@ import {
   IonItem,
   IonItemGroup,
   IonList,
+  IonListHeader,
   IonSelect,
   IonSelectOption,
+  IonLabel
 } from "@ionic/react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
@@ -13,8 +15,8 @@ import React, { useEffect, useRef, useState } from "react";
 highcharts3d(Highcharts);
 
 enum TimeOption {
-  YEAR = "Año",
-  MONTH = "Trimestre",
+  YEAR = "año",
+  MONTH = "trimestre",
 }
 
 interface ApiDataInterface {
@@ -45,7 +47,7 @@ const BasicColumnAverageSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
       text: "Gasto medio por turista y día",
     },
     subtitle: {
-      text: "Fuente: Instituto Canario de Estadística",
+      text: 'Fuente: <a target="_blank" href="http://www.gobiernodecanarias.org/istac/">Instituto Canario de Estadística</a>',
     },
     xAxis: {
       crosshair: true,
@@ -87,6 +89,9 @@ const BasicColumnAverageSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
         },
       },
     },
+    credits: {
+      enabled: false,
+    },
   });
 
   useEffect(() => {
@@ -95,10 +100,10 @@ const BasicColumnAverageSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
     const dataValue = data.slice(0, 5).reverse();
 
     const values = [
-      { name: "Primer trimestre", data: [] },
-      { name: "Segundo trimestre", data: [] },
-      { name: "Tercer trimestre", data: [] },
-      { name: "Cuarto trimestre", data: [] },
+      { name: "Primer trimestre", data: [], color: "#2f7ed8" },
+        { name: "Segundo trimestre", data: [], color: "#f28f43" },
+        { name: "Tercer trimestre", data: [], color: "#492970" },
+        { name: "Cuarto trimestre", data: [], color: "#c42525" },
     ];
 
     dataValue.forEach((item: any) => {
@@ -163,18 +168,22 @@ const BasicColumnAverageSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
 
   return (
     <div>
-      <IonList>
-        <IonItemGroup>
-          <IonItem lines="none">
+      <IonList lines="none">
+      <IonListHeader className="header-top">
+          <h2>Gasto medio por turista y día</h2>
+        </IonListHeader>
+        <IonItemGroup className="item-group-top">
+          <IonItem>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+            Se visualiza el gasto medio por día que realizan los turistas
+            durante su estancia en el archipiélago, incluyendo datos anuales y
+            trimestrales.
             </p>
           </IonItem>
-          <div className="select-container select-time">
-            <IonSelect
+          <div className="select-container">
+          <IonItem className="custom-select">
+            <IonLabel>Organizar por:</IonLabel>
+            <IonSelect 
               placeholder={timeOption}
               onIonChange={(e) => handleSelect(e.detail.value)}
             >
@@ -185,6 +194,7 @@ const BasicColumnAverageSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
                 {TimeOption.MONTH}
               </IonSelectOption>
             </IonSelect>
+            </IonItem>
           </div>
           <HighchartsReact
             highcharts={Highcharts}
