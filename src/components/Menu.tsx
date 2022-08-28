@@ -15,14 +15,14 @@ import {
   barChartSharp,
   home,
   homeSharp,
+  informationCircle,
+  informationCircleOutline,
   pieChartOutline,
   pieChartSharp,
   statsChartOutline,
   statsChartSharp,
   trendingUpOutline,
   trendingUpSharp,
-  informationCircleOutline,
-  informationCircle
 } from "ionicons/icons";
 import { useLocation } from "react-router-dom";
 import "./Menu.css";
@@ -80,7 +80,9 @@ const Menu: React.FC = () => {
     <IonMenu contentId="main" type="overlay" swipeGesture={true}>
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>Turismo</IonListHeader>
+          <IonListHeader>
+            <img src="assets/images/daturMobileName.png" alt="Datur logo" />
+          </IonListHeader>
           <IonNote>El turismo de Canarias en datos</IonNote>
           {appPages.map((appPage, index) => {
             return (
