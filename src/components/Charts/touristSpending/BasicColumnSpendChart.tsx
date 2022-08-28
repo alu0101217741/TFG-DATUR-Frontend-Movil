@@ -10,7 +10,6 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import highcharts3d from "highcharts/highcharts-3d";
 import React, { useEffect, useRef, useState } from "react";
-import "./BasicColumnSpendChart.css";
 
 highcharts3d(Highcharts);
 

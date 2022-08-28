@@ -9,30 +9,33 @@ ion-item p {
   font-size: 15px;
 }
 
-.select-container {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
 ion-select {
   font-family: Oswald !important;
-  font-size: 18px;
-  font-weight: 600;
-  color: rgb(0, 126, 167);
-  opacity: 1;
-  --placeholder-color: rgb(0, 126, 167);
   --placeholder-opacity: 1;
-  justify-content: center;
-  border-radius: 1em;
-  box-shadow: 1px 2px 9px rgba(56, 126, 255, 0.411);
-  width: 25%;
-  height: 50px;
-  margin-bottom: 0.8em;
 }
 
-ion-select::part(icon) {
+ion-label {
+  font-family: Oswald !important;
+}
+
+.custom-select {
+  font-family: Oswald !important;
+  font-weight: 550;
+  font-size: 18px;
   color: rgb(0, 126, 167);
   opacity: 1;
-  padding-left: 0.5em;
+  border-radius: 1em;
+  box-shadow: 1px 0px 8px rgba(56, 126, 255, 0.411);
+  margin-bottom: 0.4em;
+  margin-top: 0.4em;
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+.header-top {
+  margin-top: 0.5em;
+}
+
+.item-group-top {
+  margin-top: -0.6em;
 }

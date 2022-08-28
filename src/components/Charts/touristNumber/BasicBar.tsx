@@ -1,10 +1,12 @@
 import {
-  IonItem,
+
   IonItemGroup,
   IonList,
   IonListHeader,
   IonSelect,
   IonSelectOption,
+  IonItem,
+  IonLabel
 } from "@ionic/react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
@@ -55,9 +57,6 @@ const BasicBar: React.FC<ApiDataInterface> = ({ data }) => {
         overflow: "justify",
       },
     },
-    tooltip: {
-      valueSuffix: " millions",
-    },
     plotOptions: {
       bar: {
         dataLabels: {
@@ -65,15 +64,15 @@ const BasicBar: React.FC<ApiDataInterface> = ({ data }) => {
         },
       },
     },
-    credits: {
-      enabled: false,
-    },
     exporting: {
       buttons: {
         contextButton: {
           menuItems: ["viewFullscreen"],
         },
       },
+    },
+    credits: {
+      enabled: false,
     },
   });
 
@@ -101,7 +100,7 @@ const BasicBar: React.FC<ApiDataInterface> = ({ data }) => {
 
     setChartOptions({
       title: {
-        text: `Distribución de turistas por isla en ${years[0]}`, // Ponerlo
+        text: `Distribución de turistas por isla en ${years[0]}`,
       },
       xAxis: {
         categories: islands,
@@ -111,8 +110,9 @@ const BasicBar: React.FC<ApiDataInterface> = ({ data }) => {
       },
       series: [
         {
-          name: "Número de turistas", // Ponerlo ordenado
+          name: "Número de turistas",
           data: touristsByIsland,
+          color: "#2f7ed8",
         },
       ],
     });
@@ -149,29 +149,30 @@ const BasicBar: React.FC<ApiDataInterface> = ({ data }) => {
 
   return (
     <div>
-      <IonList>
+      <IonList lines="none">
         <IonListHeader>
           <h2>Distribución de los turistas</h2>
         </IonListHeader>
-        <IonItemGroup>
-          <IonItem lines="none">
+        <IonItemGroup className="item-group-top">
+          <IonItem>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+              Se representa la evolución que ha experimentado la cifra anual de
+            turistas que visitan las Islas Canarias.
             </p>
           </IonItem>
           <div className="select-container">
-            <IonSelect
-              placeholder={years[0]}
-              onIonChange={(e) => updateChartWithYear(e.detail.value)}
-            >
-              <IonSelectOption value={years[3]}>{years[3]}</IonSelectOption>
-              <IonSelectOption value={years[2]}>{years[2]}</IonSelectOption>
-              <IonSelectOption value={years[1]}>{years[1]}</IonSelectOption>
-              <IonSelectOption value={years[0]}>{years[0]}</IonSelectOption>
-            </IonSelect>
+            <IonItem className="custom-select ">
+            <IonLabel>Año:</IonLabel>
+              <IonSelect
+                placeholder={years[0]}
+                onIonChange={(e) => updateChartWithYear(e.detail.value)}
+              >
+                <IonSelectOption value={years[3]}>{years[3]}</IonSelectOption>
+                <IonSelectOption value={years[2]}>{years[2]}</IonSelectOption>
+                <IonSelectOption value={years[1]}>{years[1]}</IonSelectOption>
+                <IonSelectOption value={years[0]}>{years[0]}</IonSelectOption>
+              </IonSelect>
+              </IonItem>
           </div>
           <HighchartsReact
             highcharts={Highcharts}

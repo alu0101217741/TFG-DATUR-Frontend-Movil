@@ -1,6 +1,6 @@
 import { touristSpendingWrapper } from "./touristSpendingWrapper";
 
-const API_BASE_URL = "http://localhost:3001";
+const API_BASE_URL = "https://tourism-data-backend.herokuapp.com";
 
 export async function getDataFromApi(collectionUrl: any) {
   try {
