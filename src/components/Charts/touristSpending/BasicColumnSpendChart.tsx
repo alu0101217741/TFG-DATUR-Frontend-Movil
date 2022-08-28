@@ -1,11 +1,11 @@
 import {
   IonItem,
   IonItemGroup,
+  IonLabel,
   IonList,
   IonListHeader,
   IonSelect,
   IonSelectOption,
-  IonLabel
 } from "@ionic/react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
@@ -166,22 +166,22 @@ const BasicColumnSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
         <IonItemGroup className="item-group-top">
           <IonItem>
             <p>
-              En la siguiente gráfica se desglosa el gasto turístico total del año
-              seleccionado, en los principales conceptos de gasto de los
+              En la siguiente gráfica se desglosa el gasto turístico total del
+              año seleccionado, en los principales conceptos de gasto de los
               visitantes durante su estancia en Canarias.
             </p>
           </IonItem>
           <div className="select-container">
-          <IonItem className="custom-select">
-            <IonLabel>Año:</IonLabel>
-            <IonSelect
-              placeholder={activeYear}
-              onIonChange={(e) => handleSelect(e.detail.value)}
-            >
-              {years.map((year) => (
-                <IonSelectOption value={year}>{year}</IonSelectOption>
-              ))}
-            </IonSelect>
+            <IonItem className="custom-select">
+              <IonLabel>Año:</IonLabel>
+              <IonSelect
+                placeholder={activeYear}
+                onIonChange={(e) => handleSelect(e.detail.value)}
+              >
+                {years.map((year) => (
+                  <IonSelectOption value={year}>{year}</IonSelectOption>
+                ))}
+              </IonSelect>
             </IonItem>
           </div>
           <HighchartsReact

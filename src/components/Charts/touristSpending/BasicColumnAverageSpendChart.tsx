@@ -1,11 +1,11 @@
 import {
   IonItem,
   IonItemGroup,
+  IonLabel,
   IonList,
   IonListHeader,
   IonSelect,
   IonSelectOption,
-  IonLabel
 } from "@ionic/react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
@@ -61,7 +61,7 @@ const BasicColumnAverageSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
     yAxis: {
       min: 0,
       title: {
-        text: "Gasto",
+        text: "Gasto (€)",
       },
     },
     tooltip: {
@@ -101,9 +101,9 @@ const BasicColumnAverageSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
 
     const values = [
       { name: "Primer trimestre", data: [], color: "#2f7ed8" },
-        { name: "Segundo trimestre", data: [], color: "#f28f43" },
-        { name: "Tercer trimestre", data: [], color: "#492970" },
-        { name: "Cuarto trimestre", data: [], color: "#c42525" },
+      { name: "Segundo trimestre", data: [], color: "#f28f43" },
+      { name: "Tercer trimestre", data: [], color: "#492970" },
+      { name: "Cuarto trimestre", data: [], color: "#c42525" },
     ];
 
     dataValue.forEach((item: any) => {
@@ -136,6 +136,7 @@ const BasicColumnAverageSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
         {
           name: "Gasto total",
           data: yearsValues.map((value) => parseFloat((value / 4).toFixed(2))),
+          color: "#2f7ed8",
         },
       ];
 
@@ -169,31 +170,31 @@ const BasicColumnAverageSpendChart: React.FC<ApiDataInterface> = ({ data }) => {
   return (
     <div>
       <IonList lines="none">
-      <IonListHeader className="header-top">
+        <IonListHeader className="header-top">
           <h2>Gasto medio por turista y día</h2>
         </IonListHeader>
         <IonItemGroup className="item-group-top">
           <IonItem>
             <p>
-            Se visualiza el gasto medio por día que realizan los turistas
-            durante su estancia en el archipiélago, incluyendo datos anuales y
-            trimestrales.
+              Se visualiza el gasto medio por día que realizan los turistas
+              durante su estancia en el archipiélago, incluyendo datos anuales y
+              trimestrales.
             </p>
           </IonItem>
           <div className="select-container">
-          <IonItem className="custom-select">
-            <IonLabel>Organizar por:</IonLabel>
-            <IonSelect 
-              placeholder={timeOption}
-              onIonChange={(e) => handleSelect(e.detail.value)}
-            >
-              <IonSelectOption value={TimeOption.YEAR}>
-                {TimeOption.YEAR}
-              </IonSelectOption>
-              <IonSelectOption value={TimeOption.MONTH}>
-                {TimeOption.MONTH}
-              </IonSelectOption>
-            </IonSelect>
+            <IonItem className="custom-select">
+              <IonLabel>Organizar por:</IonLabel>
+              <IonSelect
+                placeholder={timeOption}
+                onIonChange={(e) => handleSelect(e.detail.value)}
+              >
+                <IonSelectOption value={TimeOption.YEAR}>
+                  {TimeOption.YEAR}
+                </IonSelectOption>
+                <IonSelectOption value={TimeOption.MONTH}>
+                  {TimeOption.MONTH}
+                </IonSelectOption>
+              </IonSelect>
             </IonItem>
           </div>
           <HighchartsReact

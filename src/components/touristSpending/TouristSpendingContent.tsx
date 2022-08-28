@@ -26,8 +26,8 @@ const TouristSpendingContent: React.FC = () => {
           </IonItem>
           <IonItem lines="none">
             <p>
-              Para generar estas gráficas se han procesado los
-              siguientes datasets del repositorio &nbsp;
+              Para generar estas gráficas se han procesado los siguientes
+              datasets del repositorio &nbsp;
               <b>
                 <a
                   target="_blank"
@@ -50,7 +50,8 @@ const TouristSpendingContent: React.FC = () => {
             >
               <IonCardContent className="card-button-content">
                 <p>
-                  Gastos medios según países de residencia por islas de Canarias y periodos.
+                  Gastos medios según países de residencia por islas de Canarias
+                  y periodos.
                 </p>
               </IonCardContent>
             </IonCard>
@@ -64,9 +65,7 @@ const TouristSpendingContent: React.FC = () => {
               class="card-link"
             >
               <IonCardContent className="card-button-content">
-                <p>
-                Gasto turístico total según nacionalidades por periodos.
-                </p>
+                <p>Gasto turístico total según nacionalidades por periodos.</p>
               </IonCardContent>
             </IonCard>
           </div>

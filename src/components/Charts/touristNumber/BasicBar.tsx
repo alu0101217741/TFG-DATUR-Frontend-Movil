@@ -1,12 +1,11 @@
 import {
-
+  IonItem,
   IonItemGroup,
+  IonLabel,
   IonList,
   IonListHeader,
   IonSelect,
   IonSelectOption,
-  IonItem,
-  IonLabel
 } from "@ionic/react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
@@ -157,12 +156,12 @@ const BasicBar: React.FC<ApiDataInterface> = ({ data }) => {
           <IonItem>
             <p>
               Se representa la evolución que ha experimentado la cifra anual de
-            turistas que visitan las Islas Canarias.
+              turistas que visitan las Islas Canarias.
             </p>
           </IonItem>
           <div className="select-container">
             <IonItem className="custom-select ">
-            <IonLabel>Año:</IonLabel>
+              <IonLabel>Año:</IonLabel>
               <IonSelect
                 placeholder={years[0]}
                 onIonChange={(e) => updateChartWithYear(e.detail.value)}
@@ -172,7 +171,7 @@ const BasicBar: React.FC<ApiDataInterface> = ({ data }) => {
                 <IonSelectOption value={years[1]}>{years[1]}</IonSelectOption>
                 <IonSelectOption value={years[0]}>{years[0]}</IonSelectOption>
               </IonSelect>
-              </IonItem>
+            </IonItem>
           </div>
           <HighchartsReact
             highcharts={Highcharts}

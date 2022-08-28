@@ -1,9 +1,9 @@
 import { IonContent, IonHeader, IonPage } from "@ionic/react";
 import CardsGroup from "../components/CardsGroup";
+import "../components/Charts/highchartSettings";
 import SloganSection from "../components/SloganSection";
 import Toolbar from "../components/Toolbar";
 import "./Home.css";
-import "../components/Charts/highchartSettings";
 
 const Page: React.FC = () => {
   return (

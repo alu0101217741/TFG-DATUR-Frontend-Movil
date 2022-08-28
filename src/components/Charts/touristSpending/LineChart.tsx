@@ -1,5 +1,12 @@
-import {    IonSelect,
-  IonSelectOption, IonLabel, IonItem, IonItemGroup, IonList, IonListHeader } from "@ionic/react";
+import {
+  IonItem,
+  IonItemGroup,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonSelect,
+  IonSelectOption,
+} from "@ionic/react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { useEffect, useRef, useState } from "react";
@@ -223,33 +230,44 @@ const LineChart: React.FC<ApiDataInterface> = ({ data }) => {
         <IonItemGroup className="item-group-top">
           <IonItem>
             <p>
-            En esta gráfica se muestra la evolución del gasto turístico durante
-            los últimos años, ofreciendo la posibilidad de observar los gastos
-            totales anuales, o conocer estas cantidades por trimestre.
+              En esta gráfica se muestra la evolución del gasto turístico
+              durante los últimos años, ofreciendo la posibilidad de observar
+              los gastos totales anuales, o conocer estas cantidades por
+              trimestre.
             </p>
           </IonItem>
           <div className="select-container">
             <IonItem className="custom-select">
-            <IonLabel>Tipo de gráfico:</IonLabel>
+              <IonLabel>Tipo de gráfico:</IonLabel>
               <IonSelect
                 placeholder={chartTypeToShow}
                 onIonChange={(e) => handleChartType(e.detail.value)}
                 cancelText="Cancelar"
               >
-                <IonSelectOption value={ChartType.LINE}>{ChartType.LINE}</IonSelectOption>
-                <IonSelectOption value={ChartType.AREA}>{ChartType.AREA}</IonSelectOption>
-                <IonSelectOption value={ChartType.COLUMN}>{ChartType.COLUMN}</IonSelectOption>
+                <IonSelectOption value={ChartType.LINE}>
+                  {ChartType.LINE}
+                </IonSelectOption>
+                <IonSelectOption value={ChartType.AREA}>
+                  {ChartType.AREA}
+                </IonSelectOption>
+                <IonSelectOption value={ChartType.COLUMN}>
+                  {ChartType.COLUMN}
+                </IonSelectOption>
               </IonSelect>
             </IonItem>
             <IonItem className="custom-select">
-            <IonLabel>Organizar por:</IonLabel>
+              <IonLabel>Organizar por:</IonLabel>
               <IonSelect
                 placeholder={periodTime}
                 onIonChange={(e) => handlePeriodTime(e.detail.value)}
                 cancelText="Cancelar"
               >
-                <IonSelectOption value={PeriodTime.YEAR}>{PeriodTime.YEAR}</IonSelectOption>
-                <IonSelectOption value={PeriodTime.TRIMESTER}>{PeriodTime.TRIMESTER}</IonSelectOption>
+                <IonSelectOption value={PeriodTime.YEAR}>
+                  {PeriodTime.YEAR}
+                </IonSelectOption>
+                <IonSelectOption value={PeriodTime.TRIMESTER}>
+                  {PeriodTime.TRIMESTER}
+                </IonSelectOption>
               </IonSelect>
             </IonItem>
           </div>

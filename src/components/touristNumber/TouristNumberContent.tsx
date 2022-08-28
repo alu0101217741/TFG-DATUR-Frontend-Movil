@@ -18,15 +18,15 @@ const TouristNumberContent: React.FC = () => {
         <IonItemGroup>
           <IonItem lines="none">
             <p>
-            En esta sección se proporciona una visión global acerca de los
+              En esta sección se proporciona una visión global acerca de los
               turistas que visitan las Islas Canarias. Para ello, se muestra la
               evolución del número de turistas en los últimos años, sus
               nacionalidades, y la forma en la que se distribuyen por las islas.
-              </p>
+            </p>
           </IonItem>
           <IonItem lines="none">
             <p>
-            Para generar estas gráficas se han procesado los siguientes
+              Para generar estas gráficas se han procesado los siguientes
               datasets del repositorio &nbsp;
               <b>
                 <a
@@ -50,8 +50,8 @@ const TouristNumberContent: React.FC = () => {
             >
               <IonCardContent className="card-button-content">
                 <p>
-                Turistas que han visitado Canarias según lugares de
-                    residencia por periodos
+                  Turistas que han visitado Canarias según lugares de residencia
+                  por periodos
                 </p>
               </IonCardContent>
             </IonCard>
@@ -66,8 +66,8 @@ const TouristNumberContent: React.FC = () => {
             >
               <IonCardContent className="card-button-content">
                 <p>
-                Turistas principales según lugares de residencia por islas
-                    de Canarias y periodos
+                  Turistas principales según lugares de residencia por islas de
+                  Canarias y periodos
                 </p>
               </IonCardContent>
             </IonCard>

@@ -1,7 +1,7 @@
 import {
-  IonLabel,
   IonItem,
   IonItemGroup,
+  IonLabel,
   IonList,
   IonListHeader,
   IonSelect,
@@ -10,7 +10,7 @@ import {
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import React, { useEffect, useRef, useState } from "react";
-import "./LineChart.css"
+import "./LineChart.css";
 
 interface ApiDataInterface {
   data: any;
@@ -127,21 +127,27 @@ const LineChart: React.FC<ApiDataInterface> = ({ data }) => {
         <IonItemGroup className="item-group-top">
           <IonItem>
             <p>
-            Se representa la evolución que ha experimentado la cifra anual de
-            turistas que visitan las Islas Canarias.
+              Se representa la evolución que ha experimentado la cifra anual de
+              turistas que visitan las Islas Canarias.
             </p>
           </IonItem>
           <div className="select-container">
             <IonItem className="custom-select">
-            <IonLabel>Tipo de gráfico:</IonLabel>
+              <IonLabel>Tipo de gráfico:</IonLabel>
               <IonSelect
                 placeholder={chartTypeToShow}
                 onIonChange={(e) => handleSelect(e.detail.value)}
                 cancelText="Cancelar"
               >
-                <IonSelectOption value={ChartType.LINE}>{ChartType.LINE}</IonSelectOption>
-                <IonSelectOption value={ChartType.AREA}>{ChartType.AREA}</IonSelectOption>
-                <IonSelectOption value={ChartType.COLUMN}>{ChartType.COLUMN}</IonSelectOption>
+                <IonSelectOption value={ChartType.LINE}>
+                  {ChartType.LINE}
+                </IonSelectOption>
+                <IonSelectOption value={ChartType.AREA}>
+                  {ChartType.AREA}
+                </IonSelectOption>
+                <IonSelectOption value={ChartType.COLUMN}>
+                  {ChartType.COLUMN}
+                </IonSelectOption>
               </IonSelect>
             </IonItem>
           </div>

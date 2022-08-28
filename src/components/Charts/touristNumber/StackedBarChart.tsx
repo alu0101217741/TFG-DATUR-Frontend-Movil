@@ -1,11 +1,11 @@
 import {
   IonItem,
   IonItemGroup,
+  IonLabel,
   IonList,
   IonListHeader,
   IonSelect,
   IonSelectOption,
-  IonLabel
 } from "@ionic/react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
@@ -312,30 +312,38 @@ const StackedBarChart: React.FC<ApiDataInterface> = ({ data }) => {
         <IonItemGroup className="item-group-top">
           <IonItem>
             <p>
-            En esta gráfica se muestran las principales nacionalidades que
-            visitan Canarias, se ordenan según el número de turistas que llegan
-            al archipiélago procedentes de ese país de origen. Para la consulta
-            se encuentran disponibles los últimos cuatro años de los que se
-            tienen datos, y se ofrece la posibilidad de organizar la información
-            por año o por trimestre.
+              En esta gráfica se muestran las principales nacionalidades que
+              visitan Canarias, se ordenan según el número de turistas que
+              llegan al archipiélago procedentes de ese país de origen. Para la
+              consulta se encuentran disponibles los últimos cuatro años de los
+              que se tienen datos, y se ofrece la posibilidad de organizar la
+              información por año o por trimestre.
             </p>
           </IonItem>
           <div className="select-container">
             <IonItem className="custom-select">
-            <IonLabel>Tipo de gráfico:</IonLabel>
+              <IonLabel>Tipo de gráfico:</IonLabel>
               <IonSelect
                 placeholder={chartTypeToShow}
                 onIonChange={(e) => handleTypeChart(e.detail.value)}
                 cancelText="Cancelar"
               >
-                <IonSelectOption value={ChartType.BAR}>{ChartType.BAR}</IonSelectOption>
-                <IonSelectOption value={ChartType.LINE}>{ChartType.LINE}</IonSelectOption>
-                <IonSelectOption value={ChartType.AREA}>{ChartType.AREA}</IonSelectOption>
-                <IonSelectOption value={ChartType.COLUMN}>{ChartType.COLUMN}</IonSelectOption>
+                <IonSelectOption value={ChartType.BAR}>
+                  {ChartType.BAR}
+                </IonSelectOption>
+                <IonSelectOption value={ChartType.LINE}>
+                  {ChartType.LINE}
+                </IonSelectOption>
+                <IonSelectOption value={ChartType.AREA}>
+                  {ChartType.AREA}
+                </IonSelectOption>
+                <IonSelectOption value={ChartType.COLUMN}>
+                  {ChartType.COLUMN}
+                </IonSelectOption>
               </IonSelect>
             </IonItem>
             <IonItem className="custom-select">
-            <IonLabel>Año:</IonLabel>
+              <IonLabel>Año:</IonLabel>
               <IonSelect
                 placeholder={String(activeYear)}
                 onIonChange={(e) => handleYear(e.detail.value)}
@@ -348,14 +356,18 @@ const StackedBarChart: React.FC<ApiDataInterface> = ({ data }) => {
               </IonSelect>
             </IonItem>
             <IonItem className="custom-select">
-            <IonLabel>Organizar por:</IonLabel>
+              <IonLabel>Organizar por:</IonLabel>
               <IonSelect
                 placeholder={String(periodTime)}
                 onIonChange={(e) => handlePeriodTime(e.detail.value)}
                 cancelText="Cancelar"
               >
-                <IonSelectOption value={PeriodTime.YEAR}>{PeriodTime.YEAR}</IonSelectOption>
-                <IonSelectOption value={PeriodTime.TRIMESTER}>{PeriodTime.TRIMESTER}</IonSelectOption>
+                <IonSelectOption value={PeriodTime.YEAR}>
+                  {PeriodTime.YEAR}
+                </IonSelectOption>
+                <IonSelectOption value={PeriodTime.TRIMESTER}>
+                  {PeriodTime.TRIMESTER}
+                </IonSelectOption>
               </IonSelect>
             </IonItem>
           </div>
