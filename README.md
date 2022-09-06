@@ -1,4 +1,4 @@
-# Procesamiento y visualización de datos abiertos en el sector turístico de Canarias - Frontend Web
+# Procesamiento y visualización de datos abiertos en el sector turístico de Canarias - Frontend Móvil
 
 ## Alberto Mendoza Rodríguez - alu0101217741
 
@@ -8,7 +8,7 @@
   </a>
 </p>
 <p align="center"><b>
-  Enlace a sitio web: <a href="https://datur.me/">https://datur.me/</a>
+  Puede descargar el apk de la aplicación <a href="https://drive.google.com/file/d/1DtxZuFrCxD_25QPnM9wVWsJlXEwZh6ax/view">aquí</a>
 </b></p>
 
 
@@ -18,4 +18,4 @@ El proyecto ha consistido en desarrollar una aplicación web y una aplicación A
 
 ### Información del repositorio
 
-En este repositorio se encuentra el código que implementa el frontend de la página web. Para desarrollarlo se ha empleado el framework **React** y la librería de visualización de datos **Highcharts**. Con ello se ha creado una página web con un diseño atractivo y responsivo, donde se muestra información acerca del turismo canario, a través de la visualización de los últimos datos disponibles para cuatro de los aspectos más relevantes del sector. Están disponibles cuatro secciones para ser consultadas, , navegando por todas ellas se pueden observar un total de 15 gráficos con diferentes estilos, opciones configurables y maneras de visualizar la información muy diversas.
+En este repositorio se encuentra el código que implementa el frontend de la aplicacón móvil. Para desarrollarlo se ha empleado el framework **Ionic** y la librería de visualización de datos **Highcharts**. Con ello se ha creado una aplicación donde se muestra información acerca del turismo canario, a través de la visualización de los últimos datos disponibles para cuatro de los aspectos más relevantes del sector. Están disponibles cuatro secciones para ser consultadas, navegando por todas ellas se pueden observar un total de 15 gráficos con diferentes estilos, opciones configurables y maneras de visualizar la información muy diversas.
