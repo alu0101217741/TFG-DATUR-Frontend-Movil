@@ -1,6 +1,6 @@
 import { touristSpendingWrapper } from "./touristSpendingWrapper";
 
-const API_BASE_URL = "https://tourism-data-backend.herokuapp.com";
+const API_BASE_URL = "https://www.datur.me";
 
 export async function getDataFromApi(collectionUrl: any) {
   try {
@@ -10,7 +10,6 @@ export async function getDataFromApi(collectionUrl: any) {
         "Content-type": "application/json",
         "Access-Control-Allow-Origin": "*",
       }),
-      mode: "cors",
     });
     const data = await response.json();
 
